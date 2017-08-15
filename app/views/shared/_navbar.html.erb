@@ -1,8 +1,10 @@
 <div class="navbar-wagon">
         <!-- Logo -->
-        <a href="/" class="navbar-wagon-brand">
-          <img src="images/logo-acc9c0ec.png" alt="KIKOHO-WORK">
-        </a>
+
+        <div class="title1">
+
+          <p>KIKOHO-WORK</p>
+          </div>
 
         <!-- Right Navigation -->
         <!-- <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -16,9 +18,9 @@
             <div class="alignlist">
            <!--    <img src="http://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
               <!-- <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"> -->
-                <div><a href="team.html" >Become a host</a></div>
+                <div><a href="team.html">Become a host</a></div>
                 <div><a href="#aboutus">About us</a></div>
-                <div><a href="#">Log in</a></div>
+                <div><%= link_to "log in", new_user_session_path %></div>
 
             </div>
           </div>
