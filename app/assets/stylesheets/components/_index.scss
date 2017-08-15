@@ -1,3 +1,31 @@
 // Import your components CSS files here.
 @import "alert";
 @import "navbar";
+@import "footer";
+@import "card";
+
+.banner {
+  margin-bottom: 35px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.banner-content p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+.title_show span{
+  color: #629CC3;
+  }

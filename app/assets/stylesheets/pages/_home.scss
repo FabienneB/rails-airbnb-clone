@@ -1,1 +1,135 @@
 // Specific CSS for your home-page
+
+
+.banner {
+    color: white;
+    text-align: center;
+    height: calc(100vh - 70px);
+    background-size: cover !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.banner2 {
+    color: white;
+    text-align: center;
+    height: calc(50vh - 70px);
+    background-size: cover !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+.cards {
+
+margin-top: 20px;
+padding: auto;
+}
+
+.cards a{
+color: white;
+margin-top: 20px;
+padding: auto;
+}
+
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  margin-top: -5px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.title-sep {
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    margin: 60px 0 40px 0;
+    clear: both;
+
+}
+
+.title-sep span {
+    color: #629CC3;
+}
+
+
+.vignette {
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  margin-left: 60px;
+  height: 200px;
+  width: 450px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+  background-color: #253B59;
+}
+
+
