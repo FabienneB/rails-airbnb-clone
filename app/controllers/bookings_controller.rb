@@ -4,11 +4,23 @@ class BookingsController < ApplicationController
   end
 
   def create
-
+    @booking = Booking.new(booking_params)
+    @cowork = Cowork.find(params[:cowork_id])
+    @booking.cowork = @cowork
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render 'coworks/show'
+    end
   end
 
   def destroy
-
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
+  def booking_params
+    params.require(:booking).permit(:checkin, :checkout, :user_id, :cowork_id)
+  end
 end
