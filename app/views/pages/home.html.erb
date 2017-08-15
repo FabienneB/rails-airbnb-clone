@@ -1,4 +1,124 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "go to index", coworks_path %>
+
+<% link_to "go to index", coworks_path %>
+
+ <div id="home">
+        <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'banner.jpg'%>);">
+          <div class="banner-content">
+            <h1>KIKOHO-WORK</h1>
+            <h2>Live everywhere, work everywhere</h2>
+            <!-- <p> Start your journey</p> -->
+          </div>
+        </div>
+</div>
+
+<h2 class="h3 title-sep">Our top <span>coworking places</span></h2>
+<br>
+
+<div class="cards">
+        <div class="container cards">
+           <div class="row">
+             <% @coworks.each do |cowork| %>
+               <div class="col-xs-12 col-md-4">
+               <%= link_to cowork_path(cowork), class: "your-class" do %>
+
+
+                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cowork.photos.first.path, width: 300, height: 200, crop: :fill %>');">
+                   <div class="card-category"><%= cowork.capacity %> workers
+                   </div>
+                   <div class="card-description">
+                     <h2><%= cowork.city %></h2>
+                     <p>the place to code</p>
+                   </div>
+                   <p class="card-user" > $10</p>
+                   <% end %>
+                 </div>
+               </div>
+             <% end %>
+           </div>
+          </div>
+</div>
+
+<div class="h3 title-sep">
+      <%= link_to 'Discover all our amazing coworking places', coworks_path  %>
+
+</div>
+
+<h2 class="h3 title-sep"> See what our <span>Kikoho-Workers</span> think</h2>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+
+          <div class="vignette" style="background-color: grey;">
+            <div class="card-category">Roselyne</div>
+            <div class="card-description">
+              <h2> At Titos in La Havana</h2>
+                 <!--  <span class="resa"> Coworking saloon <a class=" " href="https://">At Dino's place</a> in <a href="https:"> Cuba</a> </span> -->
+              <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
+                               No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! thanks again! </p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/roselyne0000">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+
+   <div class="col-xs-12 col-sm-6">
+          <div class="vignette" style="background-color: grey;">
+            <div class="card-category">Elodie</div>
+            <div class="card-description">
+              <h2>At Brotherood in San Francisco</h2>
+                 <!--  <span class="resa"> Coworking saloon <a class=" " href="https://">At Dino's place</a> in <a href="https:"> Cuba</a> </span> -->
+              <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
+                               No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! thanks again! </p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/nini93">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+
+ <div class="col-xs-12 col-sm-6">
+          <div class="vignette" style="background-color: grey;">
+             <div class="card-category">Fabienne</div>
+            <div class="card-description">
+              <h2>Le Wagon Shanghai</h2>
+                  <!-- <span class="resa"> Coworking saloon <a class=" " href="https://">At Dino's place</a> in <a href="https:"> Cuba</a> </span> -->
+              <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
+                               No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! thanks again! </p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/fabienneb">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+
+
+    <div class="col-xs-12 col-sm-6">
+          <div class="vignette" style="background-color: grey;">
+             <div class="card-category">Robby</div>
+            <div class="card-description">
+              <h2>Le Wagon Shanghai</h2>
+                 <!--  <span class="resa"> Coworking saloon <a class=" " href="https://">At Dino's place</a> in <a href="https:"> Cuba</a> </span> -->
+              <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
+                               No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! thanks again! </p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/robbyguerrier">
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+         </div>
+
+    <div class="aboutus">
+    <h2 class="h3 title-sep"><i> "We encourage digital nomads to enjoy their working lives and being empowered by the power of travelling!"</i>
+    <br></br>
+    <br><span> We are ... Kikoho-Workers !</span></h2></br>
+    <br>
+    </div>
+
+  </div>
+
+
+
+
+
