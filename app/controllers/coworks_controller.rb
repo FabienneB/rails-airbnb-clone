@@ -6,6 +6,5 @@ class CoworksController < ApplicationController
 
   def show
     @booking = Booking.new
-
   end
 end
