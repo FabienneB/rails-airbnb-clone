@@ -1,0 +1,5 @@
+<%= simple_form_for [cowork, booking] do |f| %>
+  <%= f.input :checkin, as: :string, input_html: { class: "datepicker" } %>
+  <%= f.input :checkout, as: :string%>
+  <%= f.button :submit, "Book", class: "btn btn-primary form-control"%>
+<% end %>

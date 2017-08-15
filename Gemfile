@@ -8,6 +8,9 @@ gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
 gem 'devise'
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-datepicker'
+end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
