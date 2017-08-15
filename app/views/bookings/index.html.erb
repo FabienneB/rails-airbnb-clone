@@ -13,7 +13,7 @@
       <div class="product-body">
       <h3>Your booking at <span class = "city"> <%= booking.cowork.city%> </span> </h3>
 
-      <h3>Price : $255</h3>
+      <h3>Price : $<%= booking.cowork.price %></h3>
       <h3> Capacity : <%= booking.cowork.capacity %></h3>
       <h3>Your host : <%= booking.cowork.user.username%></h3>
       <% unless booking.checkin.nil? %>
