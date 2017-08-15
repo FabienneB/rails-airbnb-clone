@@ -15,7 +15,7 @@ User.destroy_all
 
 puts "Début création cowork"
 
-my_cowork_1 = Cowork.new(city: "San-Francisco", capacity: 5)
+my_cowork_1 = Cowork.new(city: "San-Francisco", capacity: 5, price: 255)
 user_1 = User.create(username: "Elo", email: "elo@gmail.com", password: "123456")
 my_cowork_1.user = user_1
 urls_1 =[
@@ -26,7 +26,7 @@ my_cowork_1.save
 
 puts "Création cowork2"
 
-my_cowork_2 = Cowork.new(city: "Byron-Bay", capacity: 5)
+my_cowork_2 = Cowork.new(city: "Byron-Bay", capacity: 5, price: 300)
 user_2 = User.create(username: "Roselyne", email: "roselyne@gmail.com", password: "123456")
 my_cowork_2.user = user_2
 urls_2 =[
@@ -67,7 +67,7 @@ my_cowork_2.save
 # my_cowork_5.save
 
 puts "Création cowork6"
-my_cowork_6 = Cowork.new(city: "La Havane", capacity: 5)
+my_cowork_6 = Cowork.new(city: "La Havane", capacity: 5, price: 350)
 my_cowork_6.user = user_2
 urls_6 =[
 'https://s-media-cache-ak0.pinimg.com/564x/5e/d4/b1/5ed4b1dfc8094b1fa72304bca7a5b18c.jpg',
