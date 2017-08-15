@@ -1,0 +1,37 @@
+
+<div class="container">
+  <i><h1 class = "title-styled"> Your bookings : </h1></i>
+
+
+  <% @bookings.each do |booking| %>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="product">
+
+      <%= cl_image_tag booking.cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+
+      <div class="product-body">
+      <h3>Your booking at <span class = "city"> <%= booking.cowork.city%> </span> </h3>
+
+      <h3>Price : $255</h3>
+      <h3> Capacity : <%= booking.cowork.capacity %></h3>
+      <h3>Your host : <%= booking.cowork.user.username%></h3>
+      <% unless booking.checkin.nil? %>
+        <p>Checkin : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Checkout : <%= booking.checkout %></p>
+      <% else %>
+        <p> <i>Contact your host to know the checkin and the checkout details</i></p>
+        <p id = "cancel-styled">Cancel your booking  <span>
+          <%= link_to booking_path(booking), method: :delete, class: "icone-designed" do %>
+          <i class="fa fa-trash"></i>
+          <% end %>
+          </span>
+        </p>
+      <% end %>
+        </div>
+
+    </div>
+    <% end %>
+
+    </div>
+    </div>
+</div>
