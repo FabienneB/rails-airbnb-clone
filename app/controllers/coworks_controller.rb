@@ -5,12 +5,8 @@ class CoworksController < ApplicationController
   end
 
   def show
+    @cowork = Cowork.find(params[:id])
     @booking = Booking.new
-  end
-
-
-  def product_params
-  params.require(:cowork).permit(:city, :capacity, :user_id, photos: [])
   end
 end
 

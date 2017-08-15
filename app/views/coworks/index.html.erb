@@ -1,1 +1,67 @@
-<p>Hello</p>
+
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%), url('http://blog.bourse-des-vols.com/wp-content/uploads/2015/08/marathon-de-la-havane-ville.jpg'); height: 40vh; background-size: cover; background-position: center;">
+  <div class="banner-content">
+    <h1>Kikoho</h1>
+    <p>Live everywhere, work everywhere</p>
+  </div>
+</div>
+
+
+
+<div class="container text-center">
+      <h2 class="title_show">Find the place to <span>make work fit life!</span></h2>
+      <p>all flats come with living spaces</p>
+</div>
+
+<div class="container cards">
+  <div class="row">
+    <% @coworks.each do |cowork| %>
+      <div class="col-xs-12 col-md-4">
+
+        <%= link_to cowork_path(cowork), class: "your-class" do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cowork.photos.first.path, width: 300, height: 200, crop: :fill %>');">
+            <div class="card-category"><%= cowork.capacity %> workers
+            </div>
+            <div class="card-description">
+              <h2><%= cowork.city %></h2>
+              <p>the place to code</p>
+            </div>
+            <p class="card-user" >$10</p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container cards">
+  <div class="row">
+    <% @coworks.each do |cowork| %>
+      <div class="col-xs-12 col-md-4">
+
+        <%= link_to cowork_path(cowork), class: "your-class" do %>
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cowork.photos.second.path, width: 300, height: 200, crop: :fill %>');">
+            <div class="card-category"><%= cowork.capacity %> workers
+            </div>
+            <div class="card-description">
+              <h2><%= cowork.city %></h2>
+              <p>make work fit life</p>
+            </div>
+            <p class="card-user" >$15</p>
+          </div>
+
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
