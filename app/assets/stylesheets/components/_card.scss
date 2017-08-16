@@ -1,5 +1,6 @@
+
 .card {
-  height: 175px;
+  height: 155px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -8,6 +9,7 @@
   margin-bottom: 50px;
   transition: all 0.3s ease;
 }
+<<<<<<< HEAD
 
 .card a {
 
@@ -16,6 +18,14 @@
 // .card:hover {
 //   margin-top: -5px;
 // }
+=======
+.card:hover {
+  top: 5px;
+}
+.addon {
+  height: 250px;
+}
+>>>>>>> ebde636615f81a9849cf97440575316da630fc83
 .card-user {
   position: absolute;
   right: 10px;

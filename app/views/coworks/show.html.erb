@@ -1,4 +1,8 @@
-<div class="banner_show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @cowork.photos.first.path, :width=>2000, :crop=>"scale" %>');"> </div>
+<div class="banner_show" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'banner.jpg'%>);">
+  <div class="banner-content">
+    <h1>Book your cowork</h1>
+  </div>
+</div>
   <div class="container_flat">
 
     <div class="body_flat">
@@ -32,9 +36,29 @@
           </div>
         </div>
 
-        <div class="description">
+        <div class="description text-justify">
           <h3>The appartment</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>We have a bright and sunny north facing room available. It sleeps 2 people with a queen size bed and built in robe. <br>
+          <br>
+          Each room is equipped with its own key lock which allows for extra privacy during your stay.<br>
+
+          <br>
+          The bathroom located next door to the two bedrooms and has a full sized bath and shower and separate toilet. Both bedrooms have a very comfortable queen size bed too. There is also another toilet located down stairs for your convenience too.<br>
+          <br>
+          You will also have your own Plasma TV and DVD player and large range of dvds you can use during your stay.<br>
+          <br>
+          There are two court yards which have beautiful outdoor lounges, dinning tables and BBQ facilitates. Its a lush and beautifully landscaped area to read in the sun or just relax and unwind in the shade too.<br>
+          <br>
+          With it being only 1km (An easy 15 - 20min walk) from the main street in Byron Bay (Johnson St) and 2km from both Tallows beach and Byron Main beach its the ideal location to get away and enjoy the relaxing life style that Byron Bay offers.<br>
+
+          There is a Bus stop right out the front for easy access when needed. For anyone is needing transport to Blues and Roots Festival or Splendor the bus stops right out the front too.</p>
+        </div>
+        <div class="Pictures">
+          <h3>Photos</h3>
+          <div class="our_photos">
+            <%= cl_image_tag @cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+            <%= cl_image_tag @cowork.photos.last.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+          </div>
         </div>
       </div>
 
@@ -43,9 +67,9 @@
             <div class="price"><h2 class="text-center"> From  $<%= @cowork.price %> p/ night</h2></div>
             <div class="form-booking">
               <%= simple_form_for [@cowork, @booking] do |f| %>
-              <%= f.input :checkin, as: :string, input_html: { class: "datepicker" } %>
-              <%= f.input :checkout, as: :string, input_html: { class: "datepicker" }%>
-              <%= f.button :submit, "Book", class: "btn btn-primary form-control"%>
+              <%= f.input :checkin, as: :string, input_html: { class: "datepicker form-box" } %>
+              <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box" }%>
+              <%= f.button :submit, "Book", class: "btn btn-info form-control"%>
               <% end %>
             </div>
           </div>
@@ -55,10 +79,25 @@
 
     </div>
 
-    <div class="map-container">
-    <h3>Le quartier</h3>
-      <div class="map text-center">
-        <%= image_tag "pourelo.png", {class: "map"} %>
-      </div>
-    </div>
-  </div>
+
+    <div id="map" style="width: 100%; height: 600px;"></div>
+
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
