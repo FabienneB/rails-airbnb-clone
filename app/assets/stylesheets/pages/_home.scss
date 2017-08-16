@@ -129,7 +129,16 @@ padding: auto;
   position: relative;
   margin-bottom: 50px;
   transition: all 0.3s ease;
-  background-color: #253B59;
+  border: solid;
+  background: #457fca;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
+#vipBlock {
+    background-color: #1ea7b4;
+    color: #fff;
+    font-size: 26px;
+}
 
