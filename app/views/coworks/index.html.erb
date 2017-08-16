@@ -37,29 +37,6 @@
 </div>
 
 
-<div class="container cards">
-  <div class="row">
-    <% @coworks.each do |cowork| %>
-      <div class="col-xs-12 col-md-4">
-
-        <%= link_to cowork_path(cowork), class: "your-class" do %>
-
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cowork.photos.second.path, width: 300, height: 200, crop: :fill %>');">
-            <div class="card-category"><%= cowork.capacity %> workers
-            </div>
-            <div class="card-description">
-              <h2><%= cowork.city %></h2>
-              <p><%= cowork.description  %></p>
-            </div>
-            <p class="card-user" > $<%= cowork.price %></p>
-          </div>
-
-        <% end %>
-
-      </div>
-    <% end %>
-  </div>
-</div>
 
 
 
