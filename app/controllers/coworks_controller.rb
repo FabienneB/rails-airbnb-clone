@@ -6,6 +6,7 @@ class CoworksController < ApplicationController
 
   def show
     @cowork = Cowork.find(params[:id])
+    @cowork_coordinates = { lat: @cowork.latitude, lng: @cowork.longitude }
     @booking = Booking.new
   end
 end
