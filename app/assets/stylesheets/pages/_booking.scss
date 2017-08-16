@@ -20,10 +20,10 @@ font-weight: bolder;
   font-size: 20px;
   a {
     text-decoration:none;
-    color: green;
+    color: $green;
     &:hover {
       text-decoration:none;
-      color: green;
+      color: $green;
     }
   }
 }
@@ -37,7 +37,7 @@ font-weight: bolder;
   }
 }
 
-.container {
+.min-height {
   min-height: 550px;
   // margin-left: 45px;
   // padding : 20px;
@@ -46,6 +46,8 @@ font-weight: bolder;
     font-size : 30px;
   }
 }
+
+
 .product {
   display: flex;
   align-items: center;
