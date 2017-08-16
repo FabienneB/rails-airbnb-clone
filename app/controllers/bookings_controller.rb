@@ -4,9 +4,9 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @cowork = Cowork.find(params[:cowork_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @cowork = Cowork.find(params[:cowork_id])
     @booking.cowork = @cowork
     if @booking.save
       redirect_to bookings_path
