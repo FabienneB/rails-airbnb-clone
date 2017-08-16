@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @cowork = Cowork.find(params[:cowork_id])
     @booking.cowork = @cowork
     if @booking.save
@@ -21,6 +22,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:checkin, :checkout, :user_id, :cowork_id)
+    params.require(:booking).permit(:checkin, :checkout)
   end
 end
