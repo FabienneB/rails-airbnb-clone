@@ -1,7 +1,17 @@
 .banner_show{
+  color: white;
   text-align: center;
   height: calc(70vh - 70px);
   background-size: cover !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .container_flat{
   width: 900px;
@@ -39,13 +49,28 @@
   // margin-left: 30px;
 }
 
+.form-box{
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
  .price{
   background-color: rgb(130, 130, 130);
   flex-grow: 1;
   h2{
-    font-size: 17px;
+    font-size: 16px;
     color: white;
     font-weight: bolder;
+    margin: 10px;
   }
  }
 
@@ -89,6 +114,11 @@
   p {
     font-size: 13px;
   }
+}
+
+.our_photos{
+  display: flex;
+  align-item: center;
 }
 
 .avatar-bordered {
