@@ -15,6 +15,19 @@ font-weight: bolder;
   font-weight: lighter;
 }
 
+.no-book {
+  padding-left: 15px;
+  font-size: 20px;
+  a {
+    text-decoration:none;
+    color: green;
+    &:hover {
+      text-decoration:none;
+      color: green;
+    }
+  }
+}
+
 .icone-designed {
   color: #736F72;
   padding-left: 5px;
@@ -25,6 +38,7 @@ font-weight: bolder;
 }
 
 .container {
+  min-height: 550px;
   // margin-left: 45px;
   // padding : 20px;
   h1 {

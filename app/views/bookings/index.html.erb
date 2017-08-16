@@ -2,8 +2,11 @@
 <div class="container">
   <i><h1 class = "title-styled"> Your bookings : </h1></i>
 
-
-  <% @bookings.each do |booking| %>
+  <% if @bookings.empty? %>
+      <h3 class= "no-book">You haven't booked any kikoho places yet <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
+      <h3 class= "no-book"> <%= link_to "Let's check our amazing places", coworks_path %>  </h3>
+  <% else %>
+      <% @bookings.each do |booking| %>
     <div class="row">
     <div class="col-md-12">
     <div class="product">
@@ -13,9 +16,9 @@
       <h3>Your booking at <span class = "city"> <%= booking.cowork.city%> </span> </h3>
       <h3><%= booking.cowork.description %></h3>
 
-      <h3>Price : $<%= booking.cowork.price %></h3>
-      <h3> Capacity : <%= booking.cowork.capacity %></h3>
-      <h3>Your host : <%= booking.cowork.user.username%></h3>
+      <h3>$ <span class = "city"><%= booking.cowork.price%></span> p/day</h3>
+      <h3> With <span class = "city"> <%= booking.cowork.capacity%> </span> kikoho workers </h3>
+      <h3> At <span class = "city"> <%= booking.cowork.user.username%></span> 's house </h3>
       <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%= booking.checkout %></p>
         <p id = "cancel-styled">Cancel your booking  <span>
           <%= link_to booking_path(booking), method: :delete, class: "icone-designed" do %>
@@ -27,6 +30,8 @@
 
     </div>
     <% end %>
+
+  <% end %>
 
     </div>
     </div>
