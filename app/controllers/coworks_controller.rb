@@ -6,8 +6,10 @@ class CoworksController < ApplicationController
 
   def show
     @cowork = Cowork.find(params[:id])
-    @cowork_coordinates = { lat: @cowork.latitude, lng: @cowork.longitude }
+    @hash = Gmaps4rails.build_markers([@cowork]) do |cowork, marker|
+      marker.lat cowork.latitude
+      marker.lng cowork.longitude
+    end
     @booking = Booking.new
   end
 end
-
