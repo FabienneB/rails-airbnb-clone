@@ -7,4 +7,6 @@ class Cowork < ApplicationRecord
   validates :capacity, presence: true
   validates :capacity, numericality: { only_integer: true }
   validates :price, numericality: { only_integer: true }
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end
