@@ -4,8 +4,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
     @cowork = Cowork.find(params[:cowork_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
     @booking.cowork = @cowork
     if @booking.save
       redirect_to bookings_path
@@ -21,6 +22,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:checkin, :checkout, :user_id, :cowork_id)
+    params.require(:booking).permit(:checkin, :checkout)
   end
 end
