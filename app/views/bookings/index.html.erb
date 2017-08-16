@@ -17,7 +17,7 @@
       <h3> Capacity : <%= booking.cowork.capacity %></h3>
       <h3>Your host : <%= booking.cowork.user.username%></h3>
       <% unless booking.checkin.nil? %>
-        <p>Checkin : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Checkout : <%= booking.checkout %></p>
+        <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%= booking.checkout %></p>
       <% else %>
         <p> <i>Contact your host to know the checkin and the checkout details</i></p>
         <p id = "cancel-styled">Cancel your booking  <span>
