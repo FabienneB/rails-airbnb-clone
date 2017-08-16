@@ -9,7 +9,6 @@
     <div class="product">
 
       <%= cl_image_tag booking.cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
-
       <div class="product-body">
       <h3>Your booking at <span class = "city"> <%= booking.cowork.city%> </span> </h3>
       <h3><%= booking.cowork.description %></h3>
