@@ -10,7 +10,13 @@
 
                 <div><a href="#">Become a host</a></div>
                 <div><%= link_to "Our Kikoho Places", coworks_path %></div>
-                <div><%= link_to "Log in", new_user_session_path %></div>
+
+                <div><%= link_to "log in", new_user_session_path %></div>
+                <% if user_signed_in? %>
+                  <div><%= link_to "log out", destroy_user_session_path, method: :delete %></div>
+                  <% avatar_url = current_user.facebook_picture_url || "https://vignette2.wikia.nocookie.net/fantendo/images/9/9d/The_Mario_Icon%21.png/revision/latest?cb=20160427211059" %>
+                  <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+                <% end %>
 
             </div>
           </div>
@@ -27,3 +33,5 @@
             </ul>
           </div>
         </div>
+
+
