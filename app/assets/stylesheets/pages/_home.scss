@@ -1,5 +1,11 @@
 // Specific CSS for your home-page
 
+.title_banner_green {
+margin-top: 0px;
+padding: 1px;
+
+}
+
 
 .banner {
     color: white;
@@ -34,19 +40,19 @@
 }
 
 
-.cards {
+.cards-home {
 
 margin-top: 20px;
 padding: auto;
 }
 
-.cards a{
+.cards-home a{
 color: white;
 margin-top: 20px;
 padding: auto;
 }
 
-.card {
+.card-home {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -57,32 +63,32 @@ padding: auto;
   transition: all 0.3s ease;
 }
 
-.card:hover {
+.card-home:hover {
   margin-top: -5px;
 }
-.card-user {
+.card-user-home {
   position: absolute;
   right: 10px;
   top: 10px;
   width: 40px;
   border-radius: 50%;
 }
-.card-category {
+.card-category-home {
   position: absolute;
   top: 10px;
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
 }
-.card-description {
+.card-description-home {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
+.card-description-home h2 {
   font-size: 24px;
 }
-.card-description p {
+.card-description-home p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
@@ -114,7 +120,15 @@ padding: auto;
     color: #629CC3;
 }
 
+.container-center{
+  margin: auto 20px;
+}
 
+.vignettes{
+  display: flex;
+  align-item: center;
+  justify-content: space-around;
+}
 .vignette {
   display: flex;
   border-radius: 5px;
@@ -144,8 +158,7 @@ background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, F
 
 
 .content-block {
-height: 500px;
-
+height: 450px;
 
 
 }
