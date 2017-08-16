@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20170816064420) do
     t.string   "city"
     t.integer  "capacity"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "price"
+    t.text     "description"
     t.index ["user_id"], name: "index_coworks_on_user_id", using: :btree
   end
 
