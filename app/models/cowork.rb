@@ -6,4 +6,5 @@ class Cowork < ApplicationRecord
   validates :city, presence: true
   validates :capacity, presence: true
   validates :capacity, numericality: { only_integer: true }
+  validates :price, numericality: { only_integer: true }
 end
