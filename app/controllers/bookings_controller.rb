@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   def create
     @cowork = Cowork.find(params[:cowork_id])
     @booking = Booking.new(booking_params)
+    @booking.nbr_coworkers = booking_params["nbr_coworkers"].to_i
     @booking.user = current_user
     @booking.cowork = @cowork
     if @booking.save
