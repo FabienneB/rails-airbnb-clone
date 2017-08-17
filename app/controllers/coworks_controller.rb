@@ -1,6 +1,6 @@
 class CoworksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
-  before_action :set_cowork, only: [:edit]
+  skip_before_action :authenticate_user!, only: [:show, :index, :new]
+  before_action :set_cowork, only: [:edit, :destroy]
   def index
     @coworks = Cowork.all
   end
@@ -23,7 +23,7 @@ class CoworksController < ApplicationController
     @cowork.user = current_user
     @cowork.save
     if @cowork.save
-      redirect_to dasboard_path(@cowork)
+      redirect_to dashboard_path(@cowork)
     else
       render :new
     end
@@ -34,11 +34,12 @@ class CoworksController < ApplicationController
 
   def update
     @cowork.update(cowork_params)
-    redirect_to restaurant_path(@restaurant)
+    redirect_to dashboard_path
   end
 
   def destroy
-
+    @destroy.destroy
+    redirect_to dashboard_path
   end
 
   private
@@ -47,7 +48,7 @@ class CoworksController < ApplicationController
   end
 
   def set_cowork
-
+    @cowork = Cowork.find(params[:id])
   end
 end
 
