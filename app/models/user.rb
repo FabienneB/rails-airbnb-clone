@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
+  has_many :coworks, through: :bookings
 
   # validates :username, presence: true
   # Include default devise modules. Others available are:
