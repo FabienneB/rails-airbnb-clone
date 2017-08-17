@@ -1,5 +1,6 @@
 class CoworksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
+  before_action :set_cowork, only: [:edit]
   def index
     @coworks = Cowork.all
   end
@@ -28,8 +29,26 @@ class CoworksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @cowork.update(cowork_params)
+    redirect_to restaurant_path(@restaurant)
+  end
+
+  def destroy
+
+  end
+
   private
   def cowork_params
-      params.require(:cowork).permit(:city, :address, :capacity, :price, photos: [])
-    end
+    params.require(:cowork).permit(:city, :address, :capacity, :description, :price, photos: [])
+  end
+
+  def set_cowork
+
+  end
 end
+
+
