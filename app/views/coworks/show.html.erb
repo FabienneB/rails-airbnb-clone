@@ -68,9 +68,8 @@
             <div class="form-booking">
               <%= simple_form_for [@cowork, @booking] do |f| %>
               <%= f.input :checkin, as: :string, input_html: { class: "datepicker form-box" }, label: 'Check-in', placeholder: "#{Date.today}", required: true %>
-              <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box" }, label: 'Check-in', placeholder: "#{Date.today+10}", required: true%>
+              <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box" }, label: 'Check-out', placeholder: "#{Date.today+10}", required: true%>
               <%= f.input :nbr_coworkers, class: "form-box", label: 'Number of Kikoho Workers', placeholder: "0", required: true%>
-
               <%= f.button :submit, "Book", class: "btn btn-info form-control"%>
               <% end %>
             </div>
