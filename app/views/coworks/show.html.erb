@@ -67,8 +67,8 @@
             <div class="price"><h2 class="text-center"> From  $<%= @cowork.price %> p/ night</h2></div>
             <div class="form-booking">
               <%= simple_form_for [@cowork, @booking] do |f| %>
-              <%= f.input :checkin, as: :string, input_html: { class: "datepicker form-box" } %>
-              <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box" }%>
+              <%= f.input :checkin, as: :string, input_html: { class: "datepicker form-box" }, placeholder: "#{Date.today}" %>
+              <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box" }, placeholder: "#{Date.today+10}"%>
               <%= f.button :submit, "Book", class: "btn btn-info form-control"%>
               <% end %>
             </div>
