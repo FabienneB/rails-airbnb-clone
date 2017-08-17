@@ -1,6 +1,7 @@
 class CoworksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index, :new]
   before_action :set_cowork, only: [:edit, :destroy]
+
   def index
     if params[:city].present?
       @coworks = Cowork.near(params[:city], 10)
