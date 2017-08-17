@@ -7,8 +7,6 @@ class Booking < ApplicationRecord
 
 
   def checkout_after_checkin
-    if checkout < checkin
-      errors.add(:checkout, "The check-out date can't be before check-in")
-    end
+    errors.add(:checkout, "The check-out date can't be before check-in") if checkout < checkin
   end
 end
