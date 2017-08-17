@@ -3,4 +3,7 @@ class PagesController < ApplicationController
   def home
     @coworks = Cowork.all
   end
+
+  private
+
 end
