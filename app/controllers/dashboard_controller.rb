@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @coworks = current_user.coworks
+    @coworks = Cowork.where(user: current_user)
   end
 end

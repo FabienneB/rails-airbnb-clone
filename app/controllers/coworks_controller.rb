@@ -21,9 +21,8 @@ class CoworksController < ApplicationController
   def create
     @cowork = Cowork.new(cowork_params)
     @cowork.user = current_user
-    @cowork.save
     if @cowork.save
-      redirect_to dashboard_path(@cowork)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -33,8 +32,13 @@ class CoworksController < ApplicationController
   end
 
   def update
+    @cowork.user = current_user
     @cowork.update(cowork_params)
-    redirect_to dashboard_path
+    if @cowork.save
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
   def destroy
