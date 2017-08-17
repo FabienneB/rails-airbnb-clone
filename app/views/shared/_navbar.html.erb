@@ -35,8 +35,8 @@
                          <% if user_signed_in? %>
                          <% avatar_url = current_user.facebook_picture_url %>
                          <% if user_signed_in = true %>
-                         <% avatar_url = current_user.facebook_picture_url %>
-                         <%= image_tag avatar_url, class: "avatar2 dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+                         <% avatar_url = current_user.facebook_picture_url || "https://vignette2.wikia.nocookie.net/fantendo/images/9/9d/The_Mario_Icon%21.png/revision/latest?cb=20160427211059" %>
+                         <%= image_tag avatar_url, class: "avatar2 dropdown-toggle avatar", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
                          <% end %>
                         <% end %>
                       </ul>
