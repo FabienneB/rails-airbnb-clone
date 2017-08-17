@@ -26,7 +26,34 @@ color: #324E7B;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  // background: transparent;
+  box-shadow: none;
 }
+
+.navbar-wagon a {
+  color: $green;
+  color: bold;
+}
+
+.navbar-home a {
+  color: white;
+}
+
+// transparent
+.navbar-home{
+background: transparent;
+box-shadow: none;
+position: absolute;
+width: 100%;
+  .navbar-wagon-link{
+    color: $green;
+    font-weight: bold;
+}
+}
+
 
 /* Logo */
 .navbar-wagon-brand img {
@@ -49,8 +76,8 @@ color: #324E7B;
 
 /* Basic navbar item */
 .navbar-wagon-item {
-  cursor: pointer;
-  padding: 0 20px;
+    cursor: pointer;
+    padding: 0 0px;
 }
 
 /* Navbar link */
@@ -63,21 +90,25 @@ color: #324E7B;
   text-decoration: none;
 }
 
-/* Dropdown menu */
+/* Dropdown menu  */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  color: green;
+
 }
-.navbar-wagon-dropdown-menu li > a {
+
+.navbar-wagon-dropdown-menu a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  // color: #999999 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+  color: green !important;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+.navbar-wagon-dropdown-menu a:hover {
   background: transparent !important;
   color: black !important;
 }
@@ -97,3 +128,48 @@ color: #324E7B;
 a:hover {
   text-decoration: none;
 }
+
+.hamburger {
+    background: none;
+    position: absolute;
+    top: -26px;
+    right: -39px;
+    line-height: 45px;
+    padding: 5px 15px 0px 15px;
+    color: $green;
+    border: 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    z-index: 10000000000000;
+}
+
+
+
+.avatar2 {
+  margin-left: 20px;
+  top: -26px;
+  right: -39px;
+  border-radius: 50%;
+  width: 50%;
+}
+
+#logo {
+    border: 0;
+    width: 15%;
+    opacity: 0.5;
+    margin: 30px;
+    padding: 2px;
+}
+
+#logo:hover {
+    border: 0;
+    width: 15%;
+    opacity: 1;
+    margin: 30px;
+    padding: 2px;
+    color: green;
+}
+
+
