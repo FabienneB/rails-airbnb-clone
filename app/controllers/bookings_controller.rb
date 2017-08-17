@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
     else
       render 'coworks/show'
+      # redirect_to :back
     end
   end
 
@@ -22,6 +23,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:checkin, :checkout)
+    params.require(:booking).permit(:checkin, :checkout, :nbr_coworkers)
   end
 end
