@@ -1,0 +1,83 @@
+<div class="banner_show" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'montagne2.jpg'%>); height: 40vh; background-size: cover;">
+  <div class="banner-content">
+    <h1>Propose your coworking and living space</h1>
+  </div>
+</div>
+  <div class="container_flat">
+
+    <div class="body_flat">
+
+      <div class="content_flat">
+        <div class="info">
+          <div class="info_content">
+            <h2> Welcome as a future host!</h2>
+            <div class="pictures">
+              <div class="gatherimage">
+                <div class="our_photos">
+                  <%= image_tag "Host2.jpg", width: 200, height: 290, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+                  <%= image_tag "deskhost.jpg", width: 200, height: 290, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+                </div>
+              </div>
+            </div>
+              <h3> Earn money with Kikoho as a host </h3>
+              <br> Propose a cowork and living place and optimize your revenues. Take the opportunity to meet with new people coming from worldwide. Have unique experience and give a chance to new start up to succeed. Be part of the adventure!<br>
+           </div>
+        </div>
+
+        <div class="icone">
+          <div class="icone_coworkers text-center">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <p><strong> 1. Create your cowork </strong></p>
+          </div>
+          <div class="icone_room text-center">
+            <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+            <p><strong> 2. Receive booking proposals </strong></p>
+          </div>
+          <div class="icone_coworkers text-center">
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <p><strong> 3. Validate booking proposals </strong></p>
+          </div>
+          <div class="icone_room text-center">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <p><strong> 4. Get ready to welcome your host! </strong></p>
+          </div>
+        </div>
+
+        <div class="presentation_step">
+          <h3> <i class="fa fa-home" aria-hidden="true"></i><strong> 1. Create your cowork </strong></h3>
+          <p class="step"> Describe the specificities of the working and living place with number of coworkers <br>
+
+          <h3> <i class="fa fa-envelope-open-o" aria-hidden="true"></i><strong> 2. Receive booking proposals </strong></h3>
+          <p class="step"> Just wait and see. You'll receive the booking proposal from all over the world. <br>
+
+          <h3> <i class="fa fa-check-square-o" aria-hidden="true"></i><strong> 3. Validate booking proposals</strong></h3>
+          <p class="step"> Take a look at the booking proposal and validate the appropriate one. <br>
+
+          <h3> <i class="fa fa-heart" aria-hidden="true"></i><strong> 4. Get ready to welcome your host! </strong></h3>
+          <p class="step"> You can now prepare to welcome your host. You can send email and get in touch before arrival. Enjoy! <p>
+
+        </div>
+
+      </div>
+
+      <div class="container_form">
+        <div class="form_flat">
+            <div class="price"><h2 class="text-center"> Create your cowork space </h2></div>
+            <div class="form-booking">
+              <%= simple_form_for (@cowork) do |f| %>
+              <%= f.input :city,  placeholder:"Paris" %>
+              <%= f.input :address, placeholder:"16 villa gaudelet" %>
+              <%= f.input :capacity, placeholder:"5"%>
+              <%= f.input :title, placeholder:"Great place to work"%>
+              <%= f.input :description, placeholder:"coworking place with view on the bay..."%>
+              <%= f.input :price, label: "Price in US dollars ($)", placeholder:"50" %>
+              <%= f.input :photos, as: :attachinary %>
+              <%= f.button :submit, "create cowork", class: "btn btn-info form-control"%>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
