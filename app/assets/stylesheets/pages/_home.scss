@@ -10,7 +10,8 @@ padding: 1px;
 .banner {
     color: white;
     text-align: center;
-    height: calc(100vh - 70px);
+    height: calc(100vh);
+    // height: calc(100vh - 70px);
     background-size: cover !important;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -213,6 +214,7 @@ font-size: 14px;}
 
 }
 
+
 .form-home{
   color: black;
   width: 510px;
@@ -235,4 +237,27 @@ font-size: 14px;}
     background-color: #c9a805;
     border-color: #a68b04;
   }
+
+.btn-discover{
+  height: 35px;
+  background-color: #F9D008;
+  color: white;
+  border-radius: 3px;
+  border-color: #e2bc05;
+  // padding: 2px 4px;
+  font-weight: bolder;
+  width: 100px;
+  &:hover{
+    background-color: #c9a805;
+    border-color: #a68b04;
+  }
+}
+
+.centertext h3 {
+    font-size: 31px;
+    color: #629CC3;
+}
+
+.aboutus {
+  color: #629CC3;
 }
