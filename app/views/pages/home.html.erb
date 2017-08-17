@@ -7,6 +7,13 @@
           <div class="banner-content">
             <h1>KIKOHO</h1>
             <h2>Live everywhere, work everywhere</h2>
+            <br>
+           <%= form_tag(coworks_path, method: :get) do %>
+            <%= search_field_tag 'city',nil, class: "form-home" %>
+            <%= submit_tag "Search", class: "btn-home"%>
+
+           <% end %>
+
             <!-- <p> Start ygour journey</p> -->
           </div>
         </div>
@@ -38,7 +45,7 @@
 </div>
 
 <div class="h3 title-sep-btn">
-      <%= link_to 'Discover more', coworks_path, class: "btn btn-info"  %>
+      <%= link_to 'Discover more', coworks_path, class: "btn btn-info btn-home"  %>
 
 </div>
 
@@ -150,6 +157,20 @@
   </div>
 
 
+<% content_for(:after_js) do %>
 
 
+<script>
+ var flat_address = $('input#city').get(0);
 
+  if (flat_address) {
+    var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+    google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+  </script>
+
+  <% end %>

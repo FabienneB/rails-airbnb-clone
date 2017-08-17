@@ -213,3 +213,26 @@ font-size: 14px;}
 
 }
 
+.form-home{
+  color: black;
+  width: 510px;
+  border-radius: 3px;
+  border: 0.5px solid rgba(30,30,30,0.3);
+  height: 35px;
+  opacity: 0.9;
+}
+
+.btn-home{
+  height: 35px;
+  background-color: #F9D008;
+  color: white;
+  border-radius: 3px;
+  border-color: #e2bc05;
+  // padding: 2px 4px;
+  font-weight: bolder;
+  width: 100px;
+  &:hover{
+    background-color: #c9a805;
+    border-color: #a68b04;
+  }
+}
