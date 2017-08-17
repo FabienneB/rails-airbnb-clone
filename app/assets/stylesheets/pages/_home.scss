@@ -10,7 +10,8 @@ padding: 1px;
 .banner {
     color: white;
     text-align: center;
-    height: calc(100vh - 70px);
+    height: calc(100vh);
+    // height: calc(100vh - 70px);
     background-size: cover !important;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -213,3 +214,39 @@ font-size: 14px;}
 
 }
 
+.btn-info {
+    color: #fff;
+    background-color: #F9D05F;
+    border-color: #e2bc05;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 2px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.428571429;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.centertext h3 {
+    font-size: 31px;
+    color: #629CC3;
+}
+
+.aboutus {
+  color: #629CC3;
+}
