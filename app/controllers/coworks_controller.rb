@@ -1,6 +1,6 @@
 class CoworksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index, :new]
-  before_action :set_cowork, only: [:edit, :destroy]
+  before_action :set_cowork, only: [:edit, :update, :destroy]
 
   def index
     if params[:city].present?
@@ -47,7 +47,7 @@ class CoworksController < ApplicationController
   end
 
   def destroy
-    @destroy.destroy
+    @cowork.destroy
     redirect_to dashboard_path
   end
 
