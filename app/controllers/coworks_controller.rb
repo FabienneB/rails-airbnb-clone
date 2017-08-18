@@ -47,7 +47,7 @@ class CoworksController < ApplicationController
   end
 
   def destroy
-    @destroy.destroy
+    @cowork.destroy
     redirect_to dashboard_path
   end
 
