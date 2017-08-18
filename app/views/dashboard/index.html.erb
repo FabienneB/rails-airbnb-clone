@@ -1,1 +1,28 @@
-<h1>Dashboard!</h1>
+
+<div class="container min-height">
+<i><h1 class = "title-styled text-center"> Your Kikoho places </h1></i>
+
+<% if @coworks.empty? %>
+    <h3 class= "no-book">You haven't any Kikoho places yet <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
+    <h3 class= "no-book"> <%= link_to "Let's try the hosting experience", new_cowork_path %>  </h3>
+<% else %>
+
+    <% @coworks.each do |cowork| %>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <div class="product">
+        <%# cl_image_tag cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+        <div class="product-body">
+        <h3>Your place at <span class = "city"> <%= cowork.city%> </span> </h3>
+        <h3><%= cowork.description %></h3>
+        <h3>$ <span class = "city"><%= cowork.price%></span> p/day</h3>
+        <h3> You can hosted <span class = "city"> <%= cowork.capacity%> </span> kikoho workers </h3>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>
+
+    </div>
+  </div>
+</div>

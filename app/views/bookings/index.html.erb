@@ -8,37 +8,30 @@
   <% else %>
       <% @bookings.each do |booking| %>
     <div class="row">
-    <div class="col-md-12">
-    <div class="product">
+      <div class="col-xs-12 col-md-12">
+      <div class="product">
 
-      <%= cl_image_tag booking.cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
-      <div class="product-body">
-      <h3>Your booking at <span class = "city"> <%= booking.cowork.city%> </span> </h3>
-      <h3><%= booking.cowork.description %></h3>
+        <%= cl_image_tag booking.cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+        <div class="product-body">
+        <h3> <i><%= booking.cowork.title %></i> at <span class = "city"> <%= booking.cowork.city%> </span> </h3>
+        <p id = "description-styled"><%= booking.cowork.description %></p>
+        <p> At <span class = "city"> <%= booking.cowork.user.username%></span> 's house, with <span class = "city"> <%= pluralize(booking.nbr_coworkers, 'kikoho worker')  %> </span> </p>
+        <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
+        <% test = (booking.checkout - booking.checkin).to_i * booking.cowork.price %>
+        <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * booking.nbr_coworkers * booking.cowork.price%> </span></p>
+          <p id = "cancel-styled">Cancel your booking  <span>
+            <%= link_to booking_path(booking), method: :delete, class: "icone-designed" do %>
+            <i class="fa fa-trash"></i>
+            <% end %>
+            </span>
+          </p>
+          </div>
 
-      <h3>$ <span class = "city"><%= booking.cowork.price%></span> p/day</h3>
-      <h3> With <span class = "city"> <%= booking.cowork.capacity%> </span> kikoho workers </h3>
-      <h3> At <span class = "city"> <%= booking.cowork.user.username%></span> 's house </h3>
-      <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %></p>
-      <% duration = (booking.checkout - booking.checkin).to_i %>
-      <p>Duration: <%= duration %></p>
-      <% nbr_coworkers = booking.nbr_coworkers %>
-      <p>Number of coworkers: <%= nbr_coworkers %></p>
-      <% test = duration * booking.cowork.price %>
-      <p>Total price :$ <%= duration * nbr_coworkers * booking.cowork.price %></p>
-        <p id = "cancel-styled">Cancel your booking  <span>
-          <%= link_to booking_path(booking), method: :delete, class: "icone-designed" do %>
-          <i class="fa fa-trash"></i>
-          <% end %>
-          </span>
-        </p>
-        </div>
+      </div>
+      <% end %>
 
-    </div>
     <% end %>
 
-  <% end %>
-
-    </div>
+      </div>
     </div>
 </div>
