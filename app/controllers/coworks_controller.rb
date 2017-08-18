@@ -53,7 +53,7 @@ class CoworksController < ApplicationController
 
   private
   def cowork_params
-    params.require(:cowork).permit(:city, :address, :capacity, :description, :price, photos: [])
+    params.require(:cowork).permit(:city, :address, :title, :capacity, :description, :price, photos: [])
   end
 
   def set_cowork
