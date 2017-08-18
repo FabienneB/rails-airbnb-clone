@@ -7,41 +7,28 @@
 
           <div class="navbar-wagon-item">
             <div class="alignlist">
-
-                <div><a href="#">Become a host</a></div>
+                <div><%= link_to "Become a host", new_cowork_path %></div>
                 <div><%= link_to "My dashboard", dashboard_path %></div>
                 <div><%= link_to "Kikoho places", coworks_path %></div>
 
-
-
-
+                <% if user_signed_in? %>
+                  <% avatar_url = current_user.facebook_picture_url %>
+                  <% avatar_url = current_user.facebook_picture_url || "https://vignette2.wikia.nocookie.net/fantendo/images/9/9d/The_Mario_Icon%21.png/revision/latest?cb=20160427211059" %>
+                  <div class="dropdown">
+                    <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+                    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                      <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+                      <li><%= link_to "My bookings", bookings_path %></li>
+                    </ul>
+                  </div>
+                <% else %>
                   <div class="dropdown">
                     <button class="hamburger" id="navbar-wagon-menu" data-toggle="dropdown">&#9776;</button>
-                      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                        <%= link_to "Log in", new_user_session_path %>
-                         <% if user_signed_in? %>
-                         <div><%= link_to "log out", destroy_user_session_path, method: :delete %></div>
-                         <div><%= link_to "My bookings", bookings_path %></div>
-                         <% avatar_url = current_user.facebook_picture_url %>
-                        <% end %>
-                      </ul>
+                    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                      <%= link_to "Log in", new_user_session_path %>
+                    </ul>
                   </div>
-                <!-- </div> -->
-
-                  <div class="dropdown2">
-                    <!-- <button class="hamburger" id="navbar-wagon-menu" data-toggle="dropdown">&#9776;</button> -->
-                      <!-- <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"> -->
-                        <%= link_to "", new_user_session_path %>
-                         <% if user_signed_in? %>
-                         <% avatar_url = current_user.facebook_picture_url %>
-                         <% if user_signed_in = true %>
-                         <% avatar_url = current_user.facebook_picture_url || "https://vignette2.wikia.nocookie.net/fantendo/images/9/9d/The_Mario_Icon%21.png/revision/latest?cb=20160427211059" %>
-                         <%= image_tag avatar_url, class: "avatar2 dropdown-toggle avatar", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-                         <% end %>
-                        <% end %>
-                      </ul>
-                  </div>
-
+                <% end %>
             </div>
           </div>
         </div>
