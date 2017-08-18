@@ -1,58 +1,55 @@
 <div class="container min-height">
-  <i><h1 class = "title-styled"> Your Kikoho places : </h1></i>
-
-  <% if @coworks.empty? %>
-      <h3 class= "no-book"> You haven't any Kikoho places yet <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <i><h1 class = "title-styled"> Your Kikoho places : </h1></i>
+      <% if @coworks.empty? %>
+      <h3 class= "no-book">  You haven't any Kikoho places yet  <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
       <h3 class= "no-book"> <%= link_to "Let's try the hosting experience", new_cowork_path %> </h3>
-  <% else %>
+      <% else %>
       <% @coworks.each do |cowork| %>
-    <div class="row">
-      <div class="col-xs-12 col-md-12">
       <div class="product">
         <%= cl_image_tag cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
         <div class="product-body">
-        <h3> <i><%= cowork.title %></i> at <span class = "city"> <%= cowork.city%> </span> </h3>
-        <p id = "description-styled"><%= cowork.description %></p>
-        <p>Total price : $ <span class = "city"> <%= cowork.price%> </span></p>
+          <h3> <i><%= cowork.title %></i> at <span class = "city"> <%= cowork.city%> </span> </h3>
+          <p id = "description-styled"><%= cowork.description %></p>
+          <p> Price : $ <span class = "city"> <%= cowork.price%> </span> p/day</p>
           <p id = "cancel-styled"> Delete your kikoho place <span>
             <%= link_to cowork_path(cowork), method: :delete, class: "icone-designed" do %>
             <i class="fa fa-trash"></i>
             <% end %>
-            </span>
-          </p>
-          <p id = "cancel-styled"> Update your kikoho place <span>
-            <%= link_to edit_cowork_path(cowork), class: "icone-designed" do %>
-            <i class="fa fa-pencil"></i>
-            <% end %>
-            </span>
-          </p>
-
-          </div>
-
-      </div>
-      <% if cowork.bookings.empty? %>
-        <h3 class= "no-book"> You dont'have any booking for this place yet <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
-      <% else %>
-        <% cowork.bookings.each do |booking| %>
-          <div class="row">
-            <div class="col-xs-12 col-md-12">
-            <div class="product">
-              <div class="product-body">
-              <p><%= booking.user.username %>'s booking</p>
-              <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
-              <p>Total price : $ <span class = "city"> <%= cowork.price%> </span></p>
-              <p>Status : <i>pending</i></p>
-              </div>
-            </div>
-
-      <% end %>
-
-    <% end %>
-
-      <% end %>
-
-    <% end %>
-
-      </div>
+          </span>
+        </p>
+        <p id = "cancel-styled"> Update your kikoho place <span>
+          <%= link_to edit_cowork_path(cowork), class: "icone-designed" do %>
+          <i class="fa fa-pencil"></i>
+          <% end %>
+        </span>
+      </p>
     </div>
+  </div>
+  <% if cowork.bookings.empty? %>
+  <h3 class= "no-book"> <i> You dont'have any booking for this place yet </i> <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
+  <% else %>
+  <% cowork.bookings.each do |booking| %>
+  <div class="product bookings-styled">
+    <div class="product-body">
+      <p> <span class= "city"> <%= booking.user.username %> </span>'s booking</p>
+      <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
+      <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * (booking.nbr_coworkers) * (booking.cowork.price)%> </span></p>
+      <p>Status : <span class= "city"><i>pending</i></span> - validate the booking : <span>
+      <%= link_to dashboard_path, class: "icone-designed" do %>
+      <i class="fa fa-check""></i>
+      <% end %>
+    </span> </p>
+  </div>
+</div>
+<% end %>
+<% end %>
+<% end %>
+<div class="text-center">
+  <%= link_to "Create a Kikoho place", new_cowork_path, class: "btn btn-success text-center btn-margin"  %>
+</div>
+<% end %>
+</div>
+</div>
 </div>
