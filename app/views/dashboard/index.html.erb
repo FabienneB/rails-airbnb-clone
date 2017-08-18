@@ -1,28 +1,63 @@
-
 <div class="container min-height">
-<i><h1 class = "title-styled text-center"> Your Kikoho places </h1></i>
+  <i><h1 class = "title-styled"> Your Kikoho places : </h1></i>
 
-<% if @coworks.empty? %>
-    <h3 class= "no-book">You haven't any Kikoho places yet <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
-    <h3 class= "no-book"> <%= link_to "Let's try the hosting experience", new_cowork_path %>  </h3>
-<% else %>
-
-    <% @coworks.each do |cowork| %>
-  <div class="row">
-    <div class="col-xs-12 col-md-12">
+  <% if @coworks.empty? %>
+      <h3 class= "no-book"> You haven't any Kikoho places yet <i class="fa fa-frown-o" aria-hidden="true"></i> </h3>
+      <h3 class= "no-book"> <%= link_to "Let's try the hosting experience", new_cowork_path %> </h3>
+  <% else %>
+      <% @coworks.each do |cowork| %>
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
       <div class="product">
-        <%# cl_image_tag cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+        <%= cl_image_tag cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
         <div class="product-body">
-        <h3>Your place at <span class = "city"> <%= cowork.city%> </span> </h3>
-        <h3><%= cowork.description %></h3>
-        <h3>$ <span class = "city"><%= cowork.price%></span> p/day</h3>
-        <h3> You can hosted <span class = "city"> <%= cowork.capacity%> </span> kikoho workers </h3>
-        </div>
+        <h3> <i><%= cowork.title %></i> at <span class = "city"> <%= cowork.city%> </span> </h3>
+        <p id = "description-styled"><%= cowork.description %></p>
+        <p>Total price : $ <span class = "city"> <%= cowork.price%> </span></p>
+          <p id = "cancel-styled"> Delete your kikoho place <span>
+            <%= link_to cowork_path(cowork), method: :delete, class: "icone-designed" do %>
+            <i class="fa fa-trash"></i>
+            <% end %>
+            </span>
+          </p>
+          <p id = "cancel-styled"> Update your kikoho place <span>
+            <%= link_to edit_cowork_path(cowork), class: "icone-designed" do %>
+            <i class="fa fa-pencil"></i>
+            <% end %>
+            </span>
+          </p>
+
+          </div>
+
       </div>
+
+      <div class="product">
+        <h3> <%= cowork.title %>'s <%= pluralize(cowork.bookings, 'booking')%> </h3>
+        <%= cl_image_tag cowork.photos.first.path, width: 300, height: 300, crop: :fill, id: "kudoz", class: "product-image hidden-xs" %>
+        <div class="product-body">
+        <h3> <i><%= cowork.title %></i> at <span class = "city"> <%= cowork.city%> </span> </h3>
+        <p id = "description-styled"><%= cowork.description %></p>
+        <p>Total price : $ <span class = "city"> <%= cowork.price%> </span></p>
+          <p id = "cancel-styled"> Delete your kikoho place <span>
+            <%= link_to cowork_path(cowork), method: :delete, class: "icone-designed" do %>
+            <i class="fa fa-trash"></i>
+            <% end %>
+            </span>
+          </p>
+          <p id = "cancel-styled"> Update your kikoho place <span>
+            <%= link_to edit_cowork_path(cowork), class: "icone-designed" do %>
+            <i class="fa fa-pencil"></i>
+            <% end %>
+            </span>
+          </p>
+
+          </div>
+
+      </div>
+      <% end %>
+
     <% end %>
 
-  <% end %>
-
+      </div>
     </div>
-  </div>
 </div>
