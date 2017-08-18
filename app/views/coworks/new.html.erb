@@ -64,14 +64,15 @@
         <div class="form_flat">
             <div class="price"><h2 class="text-center"> Create your cowork space </h2></div>
             <div class="form-booking">
-              <%= simple_form_for (@cowork) do |f| %>
+              <%= simple_form_for(@cowork) do |f| %>
               <%= f.input :city,  placeholder:"Paris" %>
               <%= f.input :address, placeholder:"16 villa gaudelet" %>
               <%= f.input :capacity, placeholder:"5"%>
-              <%= f.input :description, placeholder:"coworking place"%>
+              <%= f.input :title, placeholder:"Great place to work"%>
+              <%= f.input :description, placeholder:"coworking place with view on the bay..."%>
               <%= f.input :price, label: "Price in US dollars ($)", placeholder:"50" %>
               <%= f.input :photos, as: :attachinary %>
-              <%= f.button :submit, "create cowork", class: "btn btn-info form-control"%>
+              <%= f.button :submit, "Create your Kihoho place", class: "btn btn-info form-control"%>
               <% end %>
             </div>
         </div>

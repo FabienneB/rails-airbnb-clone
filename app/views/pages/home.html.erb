@@ -1,16 +1,38 @@
 
 
 <% link_to "go to index", coworks_path %>
-
+<% content_for( :navbar_class, "navbar-home") %>
  <div id="home">
         <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'banner.jpg'%>);">
           <div class="banner-content">
             <h1>KIKOHO</h1>
             <h2>Live everywhere, work everywhere</h2>
+            <br>
+           <%= form_tag(coworks_path, method: :get) do %>
+            <%= search_field_tag 'city',nil, class: "form-home" %>
+            <%= submit_tag "Search", class: "btn-home"%>
+
+           <% end %>
+
             <!-- <p> Start ygour journey</p> -->
+            <% if notice %>
+                  <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <%= notice %>
+                  </div>
+                <% end %>
+                <% if alert %>
+                  <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <%= alert %>
+                  </div>
+                <% end %>
+
           </div>
         </div>
 </div>
+
+
 
 <h2 class="h3 title-sep">Our top <span>coworking places</span></h2>
 <br>
@@ -38,7 +60,7 @@
 </div>
 
 <div class="h3 title-sep-btn">
-      <%= link_to 'Discover more', coworks_path, class: "btn btn-info"  %>
+      <%= link_to 'Discover more', coworks_path, class: "btn-discover"  %>
 
 </div>Ajasx
 
@@ -60,7 +82,7 @@
                     <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
                                      No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! Tito is very welcoming and will not hesitate to help you connect with other people! </p>
                   </div>
-                  <img class="card-user-home img-border" src="https://kitt.lewagon.com/placeholder/users/roselyne0000">
+                  <img class="card-user-home" src="https://kitt.lewagon.com/placeholder/users/roselyne0000">
                   <a class="card-link" href="#" ></a>
                 </div>
 
@@ -140,6 +162,9 @@
                 </div>
 </div>
 
+<br>
+<br>
+<br>
     <div class="aboutus">
     <h2 class="h3 title-sep"><i> "We encourage digital nomads to enjoy their working lives."</i>
     <br></br>
@@ -150,6 +175,20 @@
   </div>
 
 
+<% content_for(:after_js) do %>
 
 
+<script>
+ var flat_address = $('input#city').get(0);
 
+  if (flat_address) {
+    var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+    google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
+      if (e.keyCode == 13) {
+        e.preventDefault(); // Do not submit the form on Enter.
+      }
+    });
+  }
+  </script>
+
+  <% end %>
