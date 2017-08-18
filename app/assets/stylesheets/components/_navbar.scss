@@ -2,7 +2,7 @@
 .alignlist{
   display: flex;
 align-items: center;
-padding: 20px;
+padding: 39px;
 
 }
 
@@ -54,7 +54,6 @@ width: 100%;
 }
 }
 
-
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -65,6 +64,7 @@ width: 100%;
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  background-color: white;
 }
 
 /* Right section */
@@ -170,6 +170,12 @@ a:hover {
     margin: 30px;
     padding: 2px;
     color: green;
+}
+
+.dropdown-menu-right {
+    left: auto;
+    right: -22px;
+
 }
 
 
