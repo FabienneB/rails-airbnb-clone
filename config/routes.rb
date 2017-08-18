@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :coworks, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
+    resources :reviews, only: [:create]
   end
   resources :bookings, only: [:index, :destroy]
 

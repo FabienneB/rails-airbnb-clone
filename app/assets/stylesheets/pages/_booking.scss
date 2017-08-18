@@ -121,11 +121,9 @@ font-weight: bolder;
 /* Hover effects */
 .product:hover {
   background: #f7f7fa;
-  cursor: pointer;
 }
 .product-upvote:hover, .product-upvote.product-upvote-upvoted {
   color: #5898f1;
-  cursor: pointer;
 }
 .product-upvote-upvoted .product-arrow {
   border-bottom-color: #5898f1;

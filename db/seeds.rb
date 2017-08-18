@@ -138,9 +138,9 @@ my_cowork_12.save
 
 puts "Création coworker 1"
 coworker_1 = User.create(username: "Lydia", email: "lyd@gmail.com", password: "123456")
-coworker_1.bookings = [Booking.create(checkin: Date.today, checkout: Date.today+3, user_id: coworker_1.id, cowork_id: my_cowork_1.id), Booking.create(checkin: Date.today+10, checkout: Date.today+15, user_id: coworker_1.id, cowork_id: my_cowork_2.id)]
+coworker_1.bookings = [Booking.create(checkin: Date.today, checkout: Date.today+3, user_id: coworker_1.id, cowork_id: my_cowork_1.id, nbr_coworkers: 2), Booking.create(checkin: Date.today+10, checkout: Date.today+15, user_id: coworker_1.id, cowork_id: my_cowork_2.id, nbr_coworkers: 1)]
 
 
 puts "Création coworker 2"
 coworker_2 = User.create(username: "Tom", email: "tom@gmail.com", password: "123456")
-coworker_2.bookings = [Booking.create(checkin: Date.today+20, checkout: Date.today+28, user_id: coworker_2.id, cowork_id: my_cowork_2.id), Booking.create(checkin: Date.today+4, checkout: Date.today+10, user_id: coworker_1.id, cowork_id: my_cowork_5.id)]
+coworker_2.bookings = [Booking.create(checkin: Date.today+20, checkout: Date.today+28, user_id: coworker_2.id, cowork_id: my_cowork_2.id, nbr_coworkers: 2), Booking.create(checkin: Date.today+4, checkout: Date.today+10, user_id: coworker_1.id, cowork_id: my_cowork_5.id, nbr_coworkers: 3)]
