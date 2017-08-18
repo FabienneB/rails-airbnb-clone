@@ -20,7 +20,6 @@ class CoworksController < ApplicationController
   def create
     @cowork = Cowork.new(cowork_params)
     @cowork.user = current_user
-    @cowork.save
     if @cowork.save
       redirect_to dasboard_path(@cowork)
     else
