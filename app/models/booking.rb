@@ -3,6 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :cowork
   validates :checkin, presence: true
   validates :checkout, presence: true
+  validates :nbr_coworkers, presence: true
+  validates :nbr_coworkers, numericality: { only_integer: true }
   validate :checkout_after_checkin
 
 
