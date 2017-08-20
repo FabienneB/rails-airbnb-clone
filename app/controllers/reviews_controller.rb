@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
 
   def create
-    @cowork = Corwork.find(params[:cowork_id])
+    @cowork = Cowork.find(params[:cowork_id])
     @review = Review.new(review_params)
-    review.cowork = @cowork
-    if @cowork.save
+    @review.rating = review_params["rating"].to_i
+    @review.cowork = @cowork
+    if @review.save
       redirect_to cowork_path(@cowork)
     else
       render "coworks/show"
@@ -14,7 +15,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :content)
+    params.require(:review).permit(:rating, :comment)
 end
 
 end

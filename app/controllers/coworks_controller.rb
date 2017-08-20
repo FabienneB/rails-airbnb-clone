@@ -11,6 +11,8 @@ class CoworksController < ApplicationController
   end
 
   def show
+    @review = Review.new
+    @reviews = Review.all
     @cowork = Cowork.find(params[:id])
     @hash = Gmaps4rails.build_markers([@cowork]) do |cowork, marker|
       marker.lat cowork.latitude
@@ -22,6 +24,7 @@ class CoworksController < ApplicationController
   def new
     @cowork = Cowork.new
   end
+
 
   def create
     @cowork = Cowork.new(cowork_params)
