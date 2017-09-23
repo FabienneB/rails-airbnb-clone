@@ -20,7 +20,8 @@ class CoworksController < ApplicationController
   end
 
   def new
-    @cowork = Cowork.new
+    @cowork = Cowork.new(session[:cowork])
+    session[:cowork] = nil if current_user && session[:cowork]
   end
 
   def create
@@ -29,6 +30,7 @@ class CoworksController < ApplicationController
     if @cowork.save
       redirect_to dashboard_path
     else
+      session[:cowork] = params[:coworks]
       render :new
     end
   end
