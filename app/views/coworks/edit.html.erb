@@ -1,11 +1,8 @@
-<div class="container min-height">
+<div class="container ">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
     <i><h1 class = "title-styled"> Edit your Kihoho place : </h1></i>
-      <div class="container_form">
-        <div class="form_flat">
-            <div class="price"><h2 class="text-center"> Create your cowork space </h2></div>
-            <div class="form-booking">
+            <div class="ul-designed">
               <%= simple_form_for (@cowork) do |f| %>
               <%= f.input :city,  placeholder:"Paris" %>
               <%= f.input :address, placeholder:"16 villa gaudelet" %>
@@ -16,8 +13,6 @@
               <%= f.button :submit, "Update your Kihoho place", class: "btn btn-info form-control"%>
               <% end %>
             </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
