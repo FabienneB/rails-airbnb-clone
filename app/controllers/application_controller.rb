@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :persist_cowork_params
   before_action :authenticate_user!
   after_filter :store_action
 
@@ -16,4 +17,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def persist_cowork_params
+    session[:cowork] = params[:cowork] if params[:cowork]
+  end
 end
