@@ -79,7 +79,7 @@
               <%= f.input :title, placeholder:"Great place to work"%>
               <%= f.input :description, placeholder:"coworking place with view on the bay..."%>
               <%= f.input :price, label: "Price in US dollars ($)", placeholder:"50" %>
-              <%= f.input :photos, as: :attachinary %>
+              <%= f.input :photos, as: :attachinary,  error: "You must add at least 1 image"  %>
               <%= f.button :submit, "Create your Kihoho place", class: "btn btn-info form-control"%>
               <% end %>
             </div>
