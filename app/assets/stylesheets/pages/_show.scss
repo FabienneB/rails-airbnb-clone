@@ -43,6 +43,14 @@
 
 }
 
+.container_form_new{
+  width: 1000px;
+  height: 30vh;
+  top: 0 !important;
+  margin-left: 50px;
+
+}
+
 .form_flat{
   border : 1px solid rgb(130, 130, 130);
   display: flex;
@@ -142,6 +150,7 @@
 
 .step {
 padding-left: 30px;
+text-align: left;
 }
 
 .product-review{
@@ -179,3 +188,4 @@ padding-left: 30px;
 .quotes{
   color: $green;
 }
+

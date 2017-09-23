@@ -66,7 +66,7 @@ my_cowork_5.photo_urls = urls_5
 my_cowork_5.save
 
 puts "Création cowork6"
-my_cowork_6 = Cowork.new(city: "La Havane", capacity: 13, price: 45, title: "Come work and enjoy with us!", description: "You are looking for freedom, efficiency and a dream place to live, this is the place to be! high speed internet, cowork space allowing exchange with others, and a comfortable living space and personal bedrooom", address: "Alameda Santos 1123, São Paulo, État de São Paulo 01419-001, Brésil")
+my_cowork_6 = Cowork.new(city: "La Havane", capacity: 13, price: 45, title: "Come work and enjoy with us!", description: "You are looking for freedom, efficiency and a dream place to live, this is the place to be! high speed internet, cowork space allowing exchange with others, and a comfortable living space and personal bedrooom", address: "Gervasio y Escobar, La Havane 10700, Cuba")
 user_6 = User.create(username: "Tatiana", email: "tata@gmail.com", password: "123456")
 my_cowork_6.user = user_6
 urls_6 =[
