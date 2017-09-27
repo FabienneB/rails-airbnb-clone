@@ -101,7 +101,7 @@ my_cowork_9 = Cowork.new(city: "Toulouse", capacity: 15, price: 55, title: "Beau
 user_9 = User.create(username: "Mathieu", email: "mat@gmail.com", password: "123456")
 my_cowork_9.user = user_9
 urls_9 =[
-'http://yulaside.com/wp-content/uploads/2017/06/maison-darchitecte-flottante-au-dessus-de-leau-a-tel-aviv-interieur-maison-contemporaine-architecte.jpg',
+'http://www.mypet.guru/rHhP1yHDQC3C/location-maison-toulouse-12.jpg',
 'https://fr.aegeanair.com/-/media/destinations/toulouse/toulouse-traveller_2.jpg?w=1164&centercrop=1&h=532&usecustomfunctions=1&la=fr&hash=BE8904045B7A8E54AD305CE20CFB75C12D66751D']
 my_cowork_9.photo_urls = urls_9
 my_cowork_9.save
