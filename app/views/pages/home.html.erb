@@ -1,8 +1,9 @@
 
 
+<!-- <div class="row">
+  <div class="col-xs-12 col-md-12"> -->
 <% link_to "go to index", coworks_path %>
 <% content_for( :navbar_class, "navbar-home") %>
- <div id="home">
         <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'banner.jpg'%>);">
           <div class="banner-content">
             <h1>KIKOHO</h1>
@@ -11,10 +12,7 @@
            <%= form_tag(coworks_path, method: :get) do %>
             <%= search_field_tag 'city',nil, class: "form-home", placeholder: "  Where do you want to work?"%>
             <%= submit_tag "Search", class: "btn-home"%>
-
            <% end %>
-
-            <!-- <p> Start ygour journey</p> -->
             <% if notice %>
                   <div class="alert alert-info alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -27,12 +25,11 @@
                     <%= alert %>
                   </div>
                 <% end %>
-
+</div>
+            </div>
           </div>
         </div>
 </div>
-
-
 
 <h2 class="h3 title-sep">Our top <span>coworking places</span></h2>
 <br>
@@ -61,10 +58,7 @@
 
 <div class="h3 title-sep-btn">
       <%= link_to 'Discover more', coworks_path, class: "btn-discover"  %>
-
 </div>
-
-
 
   <section role="main" id="vipBlock">
     <div class="content-block">
@@ -75,7 +69,7 @@
 
           </div>
 <div class="vignettes">
-          <div class="vignette-banner" >
+        <!--   <div class="vignette-banner" >
                   <div class="card-category-home">Marie</div>
                   <div class="card-description-home">
                     <h2> At Titos in La Havana</h2>
@@ -84,11 +78,29 @@
                   </div>
                   <img class="card-user-home" src="https://kitt.lewagon.com/placeholder/users/roselyne0000">
                   <a class="card-link" href="#" ></a>
-                </div>
+                </div> -->
+<div class="cards-homes">
+        <div class="container cards">
+           <div class="row">
+             <% @coworks[-3..-1].each do |cowork| %>
+               <div class="col-xs-3 col-md-4">
+               <%= link_to cowork_path(cowork), class: "your-class" do %>
+                 <div class="card-homes" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%)), url('<%= cl_image_path cowork.photos.first.path, width: 300, height: 200, crop: :fill %>');">
+                   <div class="card-description">
+                     <h2><%= cowork.city %></h2>
+                     <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
+                                     No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! </p>
+                   </div>
+                   <p class="card-user-home" > <img class="card-user-home" src="https://kitt.lewagon.com/placeholder/users/roselyne0000"> </p>
+                   <% end %>
+                 </div>
+               </div>
+             <% end %>
+           </div>
+          </div>
+</div>
 
-
-
-          <div class="vignette-banner">
+          <!-- <div class="vignette-banner">
                   <div class="card-category-home">Nicole</div>
                   <div class="card-description-home">
                     <h2>At James' saloon in San Francisco</h2>
@@ -98,27 +110,19 @@
                   <a class="card-link" href="#" ></a>
                 </div>
               </div>
-</div>
-
-    </dsiv>
-
-
+          </div>
     </div>
+</div> -->
     <div class="row">
     <div class="col-sm-10 col-sm-offset-1 center" style="padding-left: 50px;">
     <p></p>
     </div>
     </div>
-
-
   </section>
-
 
 
 <h2 class="h3 title-sep"> About <span>us</span></h2>
 <br>
-
-
     <div class="aboutcard">
           <div><img src="https://kitt.lewagon.com/placeholder/users/roselyne0000" class= " rose img-border"></div>
           <div><img src="https://kitt.lewagon.com/placeholder/users/nini93" class=" nini img-border"></div>
@@ -131,7 +135,6 @@
                   <h4>Paris, France</h4>
                   <p>COWORKING AT  ITS BEST <br>
                     TEAM SPIRIT IS A WAY OF LIFE FOR HER<br>
-                    KIND AND PEACEFUL, KEEP CALM AND BE ROSELYNE <br>
                     </p>
      </div>
 
@@ -139,7 +142,6 @@
                   <h3>Elodie</h3>
                   <h4>BARCELONA, SPAIN</h4>
                   <p>ELECTRIC MINDSET<br>
-                    DREAM SELLER, SHE IS AN ENERGIZER<br>
                     BE HAPPY BE ELODIE <br>
                     </p>
                 </div>
@@ -148,7 +150,6 @@
                   <h3>Fabienne</h3>
                   <h4>Montreal, Canada</h4>
                   <p>ENGINEER MINDSET <br>
-                    PROBLEM SOLVING ISSUES ARE LIKE A GIFT FOR HER<br>
                     FAST AND FURIOUS IDEAS AT WILL <br>
                     </p>
                 </div>
@@ -156,7 +157,6 @@
                   <h3>Robby</h3>
                   <h4>New york, USA</h4>
                   <p>CREATIVE MINDSET <br>
-                    DREAM SELLER, HE IS THE MUSE OF THIS FIRM<br>
                     INSPIRE OTHERS IS HIS MOTTO <br>
                     </p>
                 </div>
@@ -168,10 +168,8 @@
     <div class="aboutus">
     <h2 class="h3 title-sep"><i> "We encourage digital nomads to enjoy their working lives."</i>
     <br></br>
-    <!-- <br><span> We are ... Kikoho-Workers !</span></h2></br> -->
     <br>
     </div>
-
   </div>
 
 
