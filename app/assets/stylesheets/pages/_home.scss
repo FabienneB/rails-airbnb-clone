@@ -226,10 +226,9 @@ font-size: 14px;}
 
 .btn-home{
   height: 35px;
-  background-color: #F9D008;
+  background-color: #F9CF5B;
   color: white;
   border-radius: 3px;
-  border-color: #e2bc05;
   // padding: 2px 4px;
   font-weight: bolder;
   width: 100px;
@@ -262,4 +261,61 @@ font-size: 14px;}
 
 .aboutus {
   color: #629CC3;
+}
+
+
+// cards homes
+
+
+.cards-homes a{
+color: white;
+margin-top: 20px;
+padding: auto;
+}
+
+.card-homes {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%);
+  background-size: cover !important;
+  background-color: darkgreen;
+  border-radius: 2%;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  padding: auto;
+}
+
+.card-homes:hover {
+  margin-top: -5px;
+}
+.card-user-homes {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category-homes {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description-homes {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description-homes h2 {
+  font-size: 24px;
+}
+.card-description-homes p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
 }
