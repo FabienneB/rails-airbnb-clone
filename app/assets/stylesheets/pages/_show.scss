@@ -128,6 +128,9 @@
   padding: 40px 0px;
 }
 
+label.stars_required:before{content:"*"}
+
+
 .our_photos{
   display: flex;
   align-item: center;

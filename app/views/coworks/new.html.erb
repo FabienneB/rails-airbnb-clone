@@ -73,14 +73,10 @@
             <div class="price"><h2 class="text-center"> Create your cowork space </h2></div>
             <div class="form-booking ul-designed">
               <%= simple_form_for(@cowork) do |f| %>
-              <input id="user_input_autocomplete_address" name="user_input_autocomplete_address", class="form-control" placeholder="Start typing your address...">
-              <input id="postal_code" name="postal_code" disabled="true" class="form-control">
-              <input id="locality" name="city" disabled="true" class="form-control">
-              <input id="street_number" name="street_number" disabled="true" class="form-control">
-              <input id="route" name="address" disabled="true" class="form-control">
-              <% @cowork.city = locality.value %>
-              <%= f.input :city, id: "locality", placeholder:"Paris"%>
-              <%= f.input :address, id: "street_address", placeholder:"16 villa gaudelet"%>
+              <label class="stars_required"> Your address</label>
+              <input id="user_input_autocomplete_address" name="address", class="form-control" placeholder="Start typing your address..." required = 'true' >
+              <input id="locality" name="locality" type="hidden" class="form-control">
+              <br>
               <%= f.input :capacity, placeholder:"5"%>
               <%= f.input :title, placeholder:"Great place to work"%>
               <%= f.input :description, placeholder:"coworking place with view on the bay..."%>
@@ -100,4 +96,4 @@
             src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU "></script>
 
     <!-- Custom JS code to bind to Autocomplete API -->
-    <script type="text/javascript" src="autocomplete.js"></script>
+    <!-- <script type="text/javascript" src="autocomplete.js"></script> -->
