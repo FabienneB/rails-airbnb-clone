@@ -9,7 +9,7 @@ class Cowork < ApplicationRecord
   validates :capacity, presence: true
   validates :capacity, numericality: { only_integer: true }
   validates :price, numericality: { only_integer: true }, presence: true
-  validates :address, presence: true
+  validates :address, presence: true, length: { minimum: 2 }
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end

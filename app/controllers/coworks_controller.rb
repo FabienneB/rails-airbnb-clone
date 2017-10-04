@@ -30,6 +30,8 @@ class CoworksController < ApplicationController
   def create
     @cowork = Cowork.new(cowork_params)
     @cowork.user = current_user
+    @cowork.city = params[:locality]
+    @cowork.address = params[:address]
     if @cowork.save
       redirect_to dashboard_path
     else
