@@ -4,12 +4,19 @@
 
         <div class="title1">
 
-          <p><a href="/"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/1058996-200.png" id= "logo"></a></p>
+          <p><!-- <a href="/"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/1058996-200.png" id= "logo"></a> --> WeeSound</p>
           </div>
 
           <div class="navbar-wagon-item">
             <div class="alignlist">
                 <div><%= link_to "Become a host", new_cowork_path %></div>
+
+                <div><%= link_to "My dashboard", dashboard_path %></div>
+                    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                      <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+                      <li><%= link_to "My bookings", bookings_path %></li>
+                    </ul>
+
 
                 <div><%= link_to "Kikoho places", coworks_path %></div>
 
