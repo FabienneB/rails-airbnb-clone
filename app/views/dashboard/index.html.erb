@@ -37,8 +37,13 @@
       <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
       <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * (booking.nbr_coworkers) * (booking.cowork.price)%> </span></p>
       <p> Booking for <span class = "city">  <%= pluralize(booking.nbr_coworkers, 'kikoho worker') %> </span></p>
-      <p>Status : <span class= "city"><i>pending</i></span> - validate the booking : <span>
+      <p>Status : <span class= "city"><i><%= booking.status %></i></span> - validate the booking : <span>
      <i class="fa fa-check ribby"></i>
+     <%= link_to booking_path(booking) class: "icone-designed" do %>
+        <i class="fa fa-check ribby"></i>
+      <% end %>
+      </span>
+
 
     </span> </p>
   </div>

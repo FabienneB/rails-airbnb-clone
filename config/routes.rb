@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :coworks, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :update]
     resources :reviews, only: [:create]
   end
   resources :bookings, only: [:index, :destroy]

@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking.nbr_coworkers = booking_params["nbr_coworkers"].to_i
     @booking.user = current_user
     @booking.cowork = @cowork
+    @booking.status = "pending"
     if @booking.save
       redirect_to bookings_path
     else
@@ -22,6 +23,12 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path
   end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+  end
+
 
   def booking_params
     params.require(:booking).permit(:checkin, :checkout, :nbr_coworkers)
