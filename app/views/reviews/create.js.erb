@@ -4,8 +4,9 @@ const newReviewForm = document.querySelector(".add_review");
 <% else %>
   // const review_list = document.querySelector(".all_reviews")
   var new_review = $("<%= j render 'reviews/show', review: @review %>").hide();
-  $('#all_reviews').append(new_review);
+  $('#all_reviews').prepend(new_review);
   new_review.slideDown();
-  $('review_comment').val('');
+  $('#review_comment').val('');
+  $('#review_rating').val('');
   $('#review_title').html('<%= j pluralize @cowork.reviews.count, "reviews" %>');
 <% end %>
