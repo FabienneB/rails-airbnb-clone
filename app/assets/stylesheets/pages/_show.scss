@@ -192,10 +192,14 @@ text-align: left;
   color: $green;
 }
 
-#all_reviews{
+.lot_reviews{
   overflow: hidden;
   height: 24.6em;
   line-height: 1.2em;
+}
+
+.few_reviews{
+  height: auto;
 }
 
 .add_review{
@@ -213,7 +217,7 @@ text-align: left;
 #see_reviews{
   color: $blue;
 }
-#see_form_reviews{
+#btn_see_form_reviews{
   width: 100%;
 }
 

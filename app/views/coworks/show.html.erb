@@ -65,20 +65,28 @@
 
         <div class="reviews">
           <h3 id="review_title"><%= pluralize @reviews.size, "review" %> </h3>
-          <div id = all_reviews>
-            <% if @cowork.reviews.blank? %>
-              Be the first to leave a review for <%= @cowork.title %>
-            <% else %>
-              <% @reviews.each do |review| %>
-              <%= render 'reviews/show', review: review %>
+          <% if @reviews.size <= 3 %>
+            <div id = "all_reviews" class = "few_reviews">
+              <% if @cowork.reviews.blank? %>
+                Be the first to leave a review for <%= @cowork.title %>
+              <% else %>
+                <% @reviews.each do |review| %>
+                <%= render 'reviews/show', review: review %>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
-          <a id= "see_reviews"> + See more reviews </a>
+            </div>
+          <% else %>
+            <div id = "all_reviews" class= "lot_reviews">
+              <% @reviews.each do |review| %>
+                <%= render 'reviews/show', review: review %>
+              <% end %>
+            </div>
+            <a id= "see_reviews"> + See more reviews </a>
+          <% end %>
         </div>
 
         <div class="add_review">
-          <a class="btn btn-primary" id= "see_form_reviews"> Leave a review !</a>
+          <a class="btn btn-primary" id= "btn_see_form_reviews"> Leave a review !</a>
           <div id= "review_form">
           <%= render 'reviews/form', cowork: @cowork, review: @review %>
           </div>
@@ -130,14 +138,15 @@
 <% end %>
 
 <script>
+document.getElementById('btn_see_form_reviews').addEventListener('click', function() {
+  document.getElementById('review_form').style.height= 'auto';
+  this.style.display= 'none';
+});
+
 document.getElementById('see_reviews').addEventListener('click', function() {
   document.getElementById('all_reviews').style.height= 'auto';
   document.getElementById('all_reviews').style.transition= 'all 500ms ease';
   this.style.display= 'none';
 });
 
-document.getElementById('see_form_reviews').addEventListener('click', function() {
-  document.getElementById('review_form').style.height= 'auto';
-  this.style.display= 'none';
-});
 </script>

@@ -5,9 +5,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.rating = review_params["rating"].to_i
     @review.cowork = @cowork
-    @reviews = @cowork.reviews.select do |review|
+    reviews_persisted = @cowork.reviews.select do |review|
       review.persisted?
     end
+    @reviews = reviews_persisted.reverse
     if @review.save
       respond_to do |format|
         format.html {redirect_to cowork_path(@cowork)}

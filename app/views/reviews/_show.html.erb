@@ -2,10 +2,12 @@
 
   <div class="review_head">
     <div class="avatar text-center">
-      <%= image_tag "host.jpg", {class: "avatar-bordered-review"} %>
+    <% avatar_url = current_user.facebook_picture_url %>
+    <% avatar_url = current_user.facebook_picture_url || "https://vignette2.wikia.nocookie.net/fantendo/images/9/9d/The_Mario_Icon%21.png/revision/latest?cb=20160427211059" %>
+      <%= image_tag avatar_url, {class: "avatar-bordered-review"} %>
     </div>
     <div class="review_star">
-      <p>Robby</p>
+      <p><%= current_user.first_name %></p>
       <% review.rating.times do %>
         <i class="fa fa-star"></i>
       <% end %>
