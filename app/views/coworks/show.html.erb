@@ -65,7 +65,7 @@
 
         <div class="reviews">
           <h3 id="review_title"><%= pluralize @reviews.size, "review" %> </h3>
-          <div class="all_reviews" id=all_reviews>
+          <div id = all_reviews>
             <% if @cowork.reviews.blank? %>
               Be the first to leave a review for <%= @cowork.title %>
             <% else %>
@@ -74,10 +74,14 @@
               <% end %>
             <% end %>
           </div>
+          <a id= "see_reviews"> + See more reviews </a>
         </div>
 
         <div class="add_review">
+          <a class="btn btn-primary" id= "see_form_reviews"> Leave a review !</a>
+          <div id= "review_form">
           <%= render 'reviews/form', cowork: @cowork, review: @review %>
+          </div>
         </div>
 
       </div>
@@ -124,3 +128,16 @@
     });
   <% end %>
 <% end %>
+
+<script>
+document.getElementById('see_reviews').addEventListener('click', function() {
+  document.getElementById('all_reviews').style.height= 'auto';
+  document.getElementById('all_reviews').style.transition= 'all 500ms ease';
+  this.style.display= 'none';
+});
+
+document.getElementById('see_form_reviews').addEventListener('click', function() {
+  document.getElementById('review_form').style.height= 'auto';
+  this.style.display= 'none';
+});
+</script>
