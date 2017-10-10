@@ -1,0 +1,5 @@
+<%= simple_form_for([@cowork, review], remote: true) do |f| %>
+  <%= f.input :rating, label: 'Your rating', placeholder: "0", required: true%>
+  <%= f.input :comment , as: :text, label: 'Your comment'%>
+  <%= f.button :submit, "Add review", class: "btn btn-info form-control"%>
+<% end %>

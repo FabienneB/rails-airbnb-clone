@@ -5,10 +5,19 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.rating = review_params["rating"].to_i
     @review.cowork = @cowork
+    @reviews = @cowork.reviews.select do |review|
+      review.persisted?
+    end
     if @review.save
-      redirect_to cowork_path(@cowork)
+      respond_to do |format|
+        format.html {redirect_to cowork_path(@cowork)}
+        format.js{}
+      end
     else
-      render "coworks/show"
+      respond_to do |format|
+        format.html {render "coworks/show"}
+        format.js{}
+      end
     end
   end
 
