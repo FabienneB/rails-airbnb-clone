@@ -64,40 +64,32 @@
         </div>
 
         <div class="reviews">
-          <h3>Reviews</h3>
-          <div class="all_reviews">
-          <% @reviews.each do |review| %>
-                <div class="product-review">
-                  <div class="review_head">
-                   <div class="avatar text-center">
-                      <%= image_tag "host.jpg", {class: "avatar-bordered-review"} %>
-                    </div>
-                    <div class="review_star">
-                    <p>Robby</p>
-                    <% review.rating.times do %>
-                    <i class="fa fa-star"></i>
-                    <% end %>
-                    <% 5 - review.rating.times do %>
-                    <i class="fa fa-star-o"></i>
-                    <% end %>
-                  </div>
-                  </div>
-
-                  <div class="review_comment">
-                  <i class="fa fa-quote-left quotes" aria-hidden="true"></i>      <p>  <%= review.comment %>   </p>    <i class="fa fa-quote-right quotes" aria-hidden="true"></i>
-
-                  </div>
-                </div>
-              <%end%>
-          </div>
+          <h3 id="review_title"><%= pluralize @reviews.size, "review" %> </h3>
+          <% if @reviews.size <= 3 %>
+            <div id = "all_reviews" class = "few_reviews">
+              <% if @cowork.reviews.blank? %>
+                Be the first to leave a review for <%= @cowork.title %>
+              <% else %>
+                <% @reviews.each do |review| %>
+                <%= render 'reviews/show', review: review %>
+                <% end %>
+              <% end %>
+            </div>
+          <% else %>
+            <div id = "all_reviews" class= "lot_reviews">
+              <% @reviews.each do |review| %>
+                <%= render 'reviews/show', review: review %>
+              <% end %>
+            </div>
+            <a id= "see_reviews"> + See more reviews </a>
+          <% end %>
         </div>
 
         <div class="add_review">
-            <%= simple_form_for [@cowork, @review] do |f| %>
-              <%= f.input :rating, label: 'Your rating', placeholder: "0", required: true%>
-              <%= f.input :comment , label: 'Your comment', placeholder: "0", required: true%>
-              <%= f.button :submit, "Add review", class: "btn btn-info form-control"%>
-              <% end %>
+          <a class="btn btn-primary" id= "btn_see_form_reviews"> Leave a review !</a>
+          <div id= "review_form">
+          <%= render 'reviews/form', cowork: @cowork, review: @review %>
+          </div>
         </div>
 
       </div>
@@ -144,3 +136,17 @@
     });
   <% end %>
 <% end %>
+
+<script>
+document.getElementById('btn_see_form_reviews').addEventListener('click', function() {
+  document.getElementById('review_form').style.height= 'auto';
+  this.style.display= 'none';
+});
+
+document.getElementById('see_reviews').addEventListener('click', function() {
+  document.getElementById('all_reviews').style.height= 'auto';
+  document.getElementById('all_reviews').style.transition= 'all 500ms ease';
+  this.style.display= 'none';
+});
+
+</script>

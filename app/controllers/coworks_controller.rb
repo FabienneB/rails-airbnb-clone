@@ -12,8 +12,11 @@ class CoworksController < ApplicationController
 
   def show
     @review = Review.new
-    @reviews = Review.all
     @cowork = Cowork.find(params[:id])
+    reviews_persisted = @cowork.reviews.select do |review|
+      review.persisted?
+    end
+    @reviews = reviews_persisted.reverse
     @hash = Gmaps4rails.build_markers([@cowork]) do |cowork, marker|
       marker.lat cowork.latitude
       marker.lng cowork.longitude
