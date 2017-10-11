@@ -8,3 +8,4 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+$('.alert').fadeOut(2000);

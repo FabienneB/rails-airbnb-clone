@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
 
   get "/dashboard/", to: "dashboard#index"
-  patch "/bookings/:id", to: "booking#mark_as_accepted", as: :accepted
-  patch "/bookings/:id", to: "booking#mark_as_rejected", as: :rejected
-  get "/bookings/:id", to: "dashboard#index"
+  patch "/dashboard/", to: "booking#mark_as_accepted", as: :accepted
+  put "/dashboard/", to: "booking#mark_as_accepted", as: :accepted
+  patch "/dashboard/", to: "booking#mark_as_rejected", as: :rejected
+  put "/dashboard/", to: "booking#mark_as_rejected", as: :rejected
 
 
 
