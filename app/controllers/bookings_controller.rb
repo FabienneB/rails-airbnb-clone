@@ -26,10 +26,14 @@ class BookingsController < ApplicationController
 
   def mark_as_accepted
     @booking.status = "accepted"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   def mark_as_rejected
     @booking.status = "rejected"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   private
