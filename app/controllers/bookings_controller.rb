@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:destroy, :mark_as_accepted, :mark_as_rejected]
   def index
     @bookings = current_user.bookings
   end
@@ -19,18 +20,25 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path
   end
 
-  def update
-    @booking = Booking.find(params[:id])
+  def mark_as_accepted
     @booking.status = "accepted"
   end
 
+  def mark_as_rejected
+    @booking.status = "rejected"
+  end
 
+  private
   def booking_params
     params.require(:booking).permit(:checkin, :checkout, :nbr_coworkers)
   end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
 end

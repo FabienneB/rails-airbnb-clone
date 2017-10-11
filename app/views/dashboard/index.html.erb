@@ -38,23 +38,19 @@
       <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * (booking.nbr_coworkers) * (booking.cowork.price)%> </span></p>
       <p> Booking for <span class = "city">  <%= pluralize(booking.nbr_coworkers, 'kikoho worker') %> </span></p>
       <p>Status : <span class= "city"><i><%= booking.status %></i></span> - validate the booking : <span>
-     <i class="fa fa-check ribby"></i>
-     <%= link_to booking_path(booking) class: "icone-designed" do %>
+     <%= link_to dashboard_path(booking) class: "icone-designed" do %>
         <i class="fa fa-check ribby"></i>
       <% end %>
       </span>
-
-
-    </span> </p>
+    </div>
   </div>
-</div>
-<% end %>
-<% end %>
-<% end %>
+  <% end %>
+  <% end %>
+    <% end %>
 <div class="text-center">
   <%= link_to "Create a Kikoho place", new_cowork_path, class: "btn btn-success text-center btn-margin"  %>
 </div>
 <% end %>
-</div>
-</div>
+    </div>
+  </div>
 </div>
