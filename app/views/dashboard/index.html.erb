@@ -37,15 +37,17 @@
       <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
       <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * (booking.nbr_coworkers) * (booking.cowork.price)%> </span></p>
       <p> Booking for <span class = "city">  <%= pluralize(booking.nbr_coworkers, 'kikoho worker') %> </span></p>
-      <p>Status : <span class= "city"><i><%= booking.status %></i></span> - validate or reject the booking : <span>
-     <%= link_to accepted_path(booking), method: :put, class: "icone-designed" do %>
-        <i class="fa fa-check ribby"></i>
-      <% end %>
-      <%= link_to rejected_path(booking), method: :put, class: "icone-designed" do %>
-        <i class="fa fa-ban ribby"></i>
-      <% end %>
-
+      <p>Status : <span class= "city"><i><%= booking.status %></i></span>
+        <% if booking.status == "pending" %>
+        - validate or reject the booking : <span>
+          <%=link_to accepted_path(booking), method: :put, class: "icone-designed" do %>
+          <i class="fa fa-check ribby"></i>
+          <% end %>
+          <%= link_to rejected_path(booking), method: :put, class: "icone-designed" do %>
+          <i class="fa fa-ban ribby"></i>
+        <% end %>
       </span>
+      <% end %>
     </div>
   </div>
   <% end %>
