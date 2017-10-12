@@ -23,7 +23,21 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  def update
+    @booking = Booking.find(params[:cowork_id])
+    @booking.update(booking_params_status)
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render "dashboard/index"
+    end
+  end
+
   def booking_params
     params.require(:booking).permit(:checkin, :checkout, :nbr_coworkers)
+  end
+
+  def booking_params_status
+    params.require(:booking).permit(:status)
   end
 end
