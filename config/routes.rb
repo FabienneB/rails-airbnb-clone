@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy]
 
   get "/dashboard/", to: "dashboard#index"
+  put "/accept_booking/:id", to: "bookings#mark_as_accepted", as: :accepted
+  put "/reject_booking/:id", to: "bookings#mark_as_rejected", as: :rejected
 
 
   mount Attachinary::Engine => "/attachinary"
