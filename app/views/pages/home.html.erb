@@ -1,192 +1,103 @@
-
-
-<!-- <div class="row">
-  <div class="col-xs-12 col-md-12"> -->
-<% link_to "go to index", coworks_path %>
 <% content_for( :navbar_class, "navbar-home") %>
-        <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'banner.jpg'%>);">
-          <div class="banner-content">
-            <h1>KIKOHO</h1>
-            <h2>Live everywhere, work everywhere</h2>
-            <br>
-           <%= form_tag(coworks_path, method: :get) do %>
-            <%= search_field_tag 'city',nil, class: "form-home", placeholder: "  Where do you want to work?"%>
-            <%= submit_tag "Search", class: "btn-home"%>
-           <% end %>
-            <% if notice %>
-                  <div class="alert alert-info alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <%= notice %>
-                  </div>
-                <% end %>
-                <% if alert %>
-                  <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <%= alert %>
-                  </div>
-                <% end %>
-</div>
-            </div>
-          </div>
-        </div>
-</div>
 
-<h2 class="h3 title-sep">Our top <span>coworking places</span></h2>
-<br>
-
-<div class="cards-home">
-        <div class="container cards">
-           <div class="row">
-             <% @coworks[-3..-1].each do |cowork| %>
-               <div class="col-xs-12 col-md-4">
-               <%= link_to cowork_path(cowork), class: "your-class" do %>
-                 <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cowork.photos.first.path, width: 300, height: 200, crop: :fill %>');">
-                   <div class="card-category-home"><%= cowork.capacity %> workers
-                   </div>
-                   <div class="card-description">
-                     <h2><%= cowork.city %></h2>
-                     <p>the place to code</p>
-                   </div>
-                   <p class="card-user-home" > $<%= cowork.price %> </p>
-                   <% end %>
-                 </div>
-               </div>
-             <% end %>
-           </div>
-          </div>
-</div>
-
-<div class="h3 title-sep-btn">
-      <%= link_to 'Discover more', coworks_path, class: "btn-discover"  %>
-</div>
-
-  <section role="main" id="vipBlock">
-    <div class="content-block">
-      <div class="container-center">
-          <div class="title_banner_green">
-
-             <h2 class="h3 title-sep"> See what our Kikoho-Workers think</h2>
-
-          </div>
-<div class="vignettes">
-        <!--   <div class="vignette-banner" >
-                  <div class="card-category-home">Marie</div>
-                  <div class="card-description-home">
-                    <h2> At Titos in La Havana</h2>
-                    <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
-                                     No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! Tito is very welcoming and will not hesitate to help you connect with other people! </p>
-                  </div>
-                  <img class="card-user-home" src="https://kitt.lewagon.com/placeholder/users/roselyne0000">
-                  <a class="card-link" href="#" ></a>
-                </div> -->
-<div class="cards-homes">
-        <div class="container cards">
-           <div class="row">
-             <% @coworks[-3..-1].each do |cowork| %>
-               <div class="col-xs-3 col-md-4">
-               <%= link_to cowork_path(cowork), class: "your-class" do %>
-                 <div class="card-homes" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%)), url('<%= cl_image_path cowork.photos.first.path, width: 300, height: 200, crop: :fill %>');">
-                   <div class="card-description">
-                     <h2><%= cowork.city %></h2>
-                     <p>I was very pleased by the space available! it was fantaaaaasticcc !!!!
-                                     No kidding! We had fiber optic wifi, a must ! great locations! can't ask for a bette places to stay, you can work in a healthy joyful environment ! </p>
-                   </div>
-                   <p class="card-user-home" > <img class="card-user-home" src="https://kitt.lewagon.com/placeholder/users/roselyne0000"> </p>
-                   <% end %>
-                 </div>
-               </div>
-             <% end %>
-           </div>
-          </div>
-</div>
-
-          <!-- <div class="vignette-banner">
-                  <div class="card-category-home">Nicole</div>
-                  <div class="card-description-home">
-                    <h2>At James' saloon in San Francisco</h2>
-              <p>Working remotely takes the isolation out of sole-proprietorship...plus, I enjoy being on the road and love being able to see the sites while I'm on the clock. Self-employed from home and sometimes I just need to get out of my place and it was great!</p>
-                  </div>
-                  <img class="card-user-home" src="https://kitt.lewagon.com/placeholder/users/nini93">
-                  <a class="card-link" href="#" ></a>
-                </div>
-              </div>
-          </div>
-    </div>
-</div> -->
-    <div class="row">
-    <div class="col-sm-10 col-sm-offset-1 center" style="padding-left: 50px;">
-    <p></p>
-    </div>
-    </div>
-  </section>
-
-
-<h2 class="h3 title-sep"> About <span>us</span></h2>
-<br>
-    <div class="aboutcard">
-          <div><img src="https://kitt.lewagon.com/placeholder/users/roselyne0000" class= " rose img-border"></div>
-          <div><img src="https://kitt.lewagon.com/placeholder/users/nini93" class=" nini img-border"></div>
-          <div><img src="https://kitt.lewagon.com/placeholder/users/fabienneb" class= " Rob img-border"></div>
-          <div><img src="https://kitt.lewagon.com/placeholder/users/robbyguerrier" class= " fabi img-border"></div>
-    </div>
- <div class="aboutcard">
-    <div class="centertext">
-                  <h3>Roselyne</h3>
-                  <h4>Paris, France</h4>
-                  <p>COWORKING AT  ITS BEST <br>
-                    TEAM SPIRIT IS A WAY OF LIFE FOR HER<br>
-                    </p>
-     </div>
-
-    <div class="centertext">
-                  <h3>Elodie</h3>
-                  <h4>BARCELONA, SPAIN</h4>
-                  <p>ELECTRIC MINDSET<br>
-                    BE HAPPY BE ELODIE <br>
-                    </p>
-                </div>
-
-    <div class="centertext">
-                  <h3>Fabienne</h3>
-                  <h4>Montreal, Canada</h4>
-                  <p>ENGINEER MINDSET <br>
-                    FAST AND FURIOUS IDEAS AT WILL <br>
-                    </p>
-                </div>
-    <div class="centertext">
-                  <h3>Robby</h3>
-                  <h4>New york, USA</h4>
-                  <p>CREATIVE MINDSET <br>
-                    INSPIRE OTHERS IS HIS MOTTO <br>
-                    </p>
-                </div>
-</div>
-
-<br>
-<br>
-<br>
-    <div class="aboutus">
-    <h2 class="h3 title-sep"><i> "We encourage digital nomads to enjoy their working lives."</i>
-    <br></br>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.3) 0%, rgba(0,36,100,0.3) 50%), url(<%= image_path 'banner.jpg'%>);">
+  <div class="banner-content">
+    <h1>KIKOHO</h1>
+    <h2>Live everywhere, work everywhere</h2>
     <br>
+    <%= form_tag(coworks_path, method: :get) do %>
+      <%= search_field_tag 'city',nil, class: "form-home", placeholder: "  Where do you want to work?"%>
+      <%= submit_tag "Search", class: "btn-home"%>
+    <% end %>
+
+    <% if notice %>
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= alert %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<div class= "top_container">
+  <div class= "top_content">
+    <h3 class= "text-center title">Our top coworking places</h3>
+    <div class="row">
+      <% @coworks[-3..-1].each do |cowork| %>
+        <div class="col-xs-12 col-md-4">
+          <%= link_to cowork_path(cowork), class: "your-class" do %>
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cowork.photos.first.path, width: 300, height: 200, crop: :fill %>');">
+                <div class="card-category-home"><%= cowork.capacity %> workers
+                </div>
+                <div class="card-description">
+                  <h2><%= cowork.city %></h2>
+                  <p>the place to code</p>
+                </div>
+                <p class="card-user-home" > $<%= cowork.price %> </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center discover"><%= link_to 'Discover more', coworks_path, class: "btn-discover"  %></div>
+  </div>
+</div>
+
+<div class = "testimony_banner" style="background-image:url(<%= image_path 'testimony_banner.jpg'%>);">
+  <div class= "testimony_content">
+    <h3>Laurie, 26 ans, Graphic Designer</h3>
+    <p> <i class="fa fa-quote-left quote_testimony" aria-hidden="true"></i>     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.     <i class="fa fa-quote-right quote_testimony" aria-hidden="true"></i></p>
+  </div>
+</div>
+
+<div  class = "mission_container">
+  <div class= "mission_content text-align:justify">
+    <h3>Our Mission</h3>
+    <p>« Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede.</p>
+  </div>
+</div>
+
+<div class="about_us_container">
+  <div class="about_us_content text-center">
+    <h3 class= "text-center title"> Meet the team !</h3>
+    <div class="row">
+
+      <div class="col-xs-12 col-md-3">
+        <div class="team_member">
+          <div><img src="https://kitt.lewagon.com/placeholder/users/roselyne0000" class= " img-border"></div>
+          <div> <h2>Roselyne</h2><p> - </p><h3>Marketing Strategist</h3> <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p></div>
+          </div>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <div class="team_member">
+          <div><img src="https://kitt.lewagon.com/placeholder/users/nini93" class=" img-border"></div>
+          <div><h2>Elodie</h2> <p> - </p><h3> Product Manager</h3> <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p></div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <div class="team_member"><div><img src="https://kitt.lewagon.com/placeholder/users/fabienneb" class= " img-border"></div>
+        <div><h2>Fabienne</h2><p> - </p><h3>Fullstack Developper</h3> <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p></div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-3">
+        <div class="team_member"><div><img src="https://kitt.lewagon.com/placeholder/users/robbyguerrier" class= "img-border"></div>
+        <div> <h2>Robby</h2><p> - </p><h3>Sales Operations</h3> <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p></div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-
-<% content_for(:after_js) do %>
-
-
-<script>
- var flat_address = $('input#city').get(0);
-
-  if (flat_address) {
-    var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
-    google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
-      if (e.keyCode == 13) {
-        e.preventDefault(); // Do not submit the form on Enter.
-      }
-    });
-  }
-  </script>
-
-  <% end %>
+</div>

@@ -1,50 +1,95 @@
-// Specific CSS for your home-page
-
-.title_banner_green {
-margin-top: 0px;
-padding: 1px;
-
-}
-
-
 .banner {
-    color: white;
-    text-align: center;
-    height: calc(100vh);
-    // height: calc(100vh - 70px);
-    background-size: cover !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  background-size: cover !important;
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-bottom: 0px;
 }
 
-.banner2 {
-    color: white;
-    text-align: center;
-    height: calc(50vh - 70px);
-    background-size: cover !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+.alert{
+  margin-top: 60px;
+  text-align: center;
+  color: white;
 }
 
+.form-home{
+  color: black;
+  width: 510px;
+  border-radius: 6px;
+  border: 0.5px solid rgba(30,30,30,0.3);
+  height: 50px;
+  opacity: 0.9;
+  font-size: 20px;
+}
 
-.cards-home a{
-color: white;
-margin-top: 20px;
-padding: auto;
+.btn-home{
+  height: 50px;
+  background-color: #F9CF5B;
+  color: white;
+  border-radius: 6px;
+  font-weight: bolder;
+  width: 115px;
+  margin: 0px 0px 0px 20px;
+  border: none;
+  &:hover{
+    background-color: #c9a805;
+    border-color: #a68b04;
+  }
+}
+
+.mission_container{
+  display: flex;
+  justify-content: center;
+  height: auto;
+  background-color:rgba(230, 230, 230, 0.8);
+}
+
+.mission_content{
+  width: 65%;
+  height: 80%;
+  margin: 35px 0px;
+  padding: 14px 0px;
+  font-size: 20px;
+}
+
+.testimony_banner{
+  position: relative;
+  justify-content: center;
+  height: 75vh;
+  background-size: cover !important;
+  background-position: 25% 75%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.testimony_content{
+  position: absolute;
+  left: 8%;
+  top: 10%;
+  width: 30%;
+  height: auto;
+  padding: 30px;
+  background-color: rgba(230, 230, 230, 0.8);
+  border-radius: 6px;
+}
+
+.testimony_content h3{
+  font-size: 18px;
+}
+
+.top_container{
+  display: flex;
+  justify-content: center;
+  height: auto;
+
+}
+.top_content{
+  width: 70%;
+  padding: 60px 0px;
 }
 
 .card-home {
@@ -54,9 +99,8 @@ padding: auto;
   background-position: center;
   color: white;
   position: relative;
-  margin-bottom: 50px;
+  margin: 20px 13px 50px 13px;
   transition: all 0.3s ease;
-  margin-top: 20px;
   padding: auto;
 }
 
@@ -104,218 +148,70 @@ padding: auto;
   opacity: 0.1;
 }
 
-.title-sep-btn {
-    font-size: 1.5em;
-    font-weight: 400;
-    text-align: center;
-    margin: 0px 0 100px 0;
-    clear: both;
-
-}
-
-.title-sep-btn span {
-    color: #629CC3;
-}
-
-
-
-
-.title-sep {
-    font-size: 1.5em;
-    font-weight: 400;
-    text-align: center;
-    margin: 60px 0 40px 0;
-    clear: both;
-
-}
-
-.title-sep span {
-    color: #629CC3;
-}
-
-.container-center{
-  margin: auto 20px;
-}
-
-.vignettes{
-  display: flex;
-  align-item: center;
-  justify-content: space-around;
-}
-.vignette {
-  display: flex;
-  border-radius: 5px;
-  align-items: center;
-  margin-left: 60px;
-  height: 200px;
-  width: 450px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  margin-bottom: 50px;
-  transition: all 0.3s ease;
-  border: solid;
-  background: #12CC94;  /* fallback for old browsers */
-// background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
-// background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-.vignette-banner {
-  display: flex;
-  border-radius: 5px;
-  align-items: center;
-  margin-left: 60px;
-  height: 200px;
-  width: 450px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  box-shadow: 1px 1px 1px rgba(30,30,30, 0.6);
-  margin-bottom: 50px;
-  transition: all 0.3s ease;
-  border: solid;
-  // background-color: #457fca;  /* fallback for old browsers */
-//background: -webkit-linear-gradient(to right, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
-//background: linear-gradient(to right, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-
-#vipBlock {
-    background-color: $green;
-    color: #fff;
-    font-size: 26px;
-}
-
-
-.content-block {
-height: 450px;
-
-
-}
-
-
-.img-border {
-    border-radius: 50%;
-    width: 80px;
-}
-
-.aboutcard {
-text-align: center;
-display: flex;
-align-item: center;
-justify-content: space-around;
-p {
-font-size: 14px;}
-
-}
-
-
-.form-home{
-  color: black;
-  width: 510px;
-  border-radius: 3px;
-  border: 0.5px solid rgba(30,30,30,0.3);
-  height: 35px;
-  opacity: 0.9;
-}
-
-.btn-home{
-  height: 35px;
-  background-color: #F9CF5B;
-  color: white;
-  border-radius: 3px;
-  // padding: 2px 4px;
-  font-weight: bolder;
-  width: 100px;
-  &:hover{
-    background-color: #c9a805;
-    border-color: #a68b04;
-  }
-}
-
 .btn-discover{
   height: 35px;
   background-color: #F9D008;
   color: white;
   border-radius: 3px;
   border-color: #e2bc05;
-  // padding: 5px;
-  padding: 2px 4px;
+  padding: 10px 14px;
+  font-size: 21px;
   font-weight: bolder;
-  width: 100px;
+  border-radius: 3px;
   &:hover{
     background-color: #c9a805;
     border-color: #a68b04;
   }
 }
 
-.centertext h3 {
-    font-size: 31px;
-    color: #629CC3;
+.discover{
+  margin-top:25px;
+  color: rgb(40, 40, 40)
 }
 
-.aboutus {
-  color: #629CC3;
+.title{
+  margin: 10px 0px 70px 0px;
 }
 
-
-// cards homes
-
-
-.cards-homes a{
-color: white;
-margin-top: 20px;
-padding: auto;
+.img-border {
+    border-radius: 50%;
+    width: 110px;
 }
 
-.card-homes {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%);
-  background-size: cover !important;
-  background-color: darkgreen;
-  border-radius: 2%;
-  background-position: center;
-  color: white;
-  position: relative;
-  margin-bottom: 50px;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  padding: auto;
+.about_us_container{
+  display: flex;
+  justify-content: center;
+  height: auto;
+
 }
 
-.card-homes:hover {
-  margin-top: -5px;
+.about_us_content{
+  width:80%;
+  margin-top: 50px;
 }
-.card-user-homes {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
+
+.team_member{
+  padding: 0px 15px;
+  margin: 0px 18px 60px 18px;
 }
-.card-category-homes {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
+
+.team_member p {
+  font-size: 16px;
+  color: rgb(50, 50, 50);
+  margin-bottom: none !important;
 }
-.card-description-homes {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+
+.team_member h3{
+  font-size: 25px;
+  color: $blue;
 }
-.card-description-homes h2 {
-  font-size: 24px;
+
+.team_member h2{
+  font-size: 30px;
+  color: $blue;
+  font-weight: bolder;
 }
-.card-description-homes p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+
+.quote_testimony{
+  margin: 0px 8px;
 }
