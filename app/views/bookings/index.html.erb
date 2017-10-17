@@ -1,6 +1,4 @@
 
-
-
 <div class="container min-height">
   <i><h1 class = "title-styled"> Your bookings : </h1></i>
 
@@ -21,14 +19,21 @@
         <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
         <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * (booking.nbr_coworkers) * (booking.cowork.price)%> </span></p>
         <p> Status : <span class = "city"> <%= booking.status %> </span></p>
+          <% if booking.checkout < Date.today %>
+          <p> Leave a review to <%= booking.cowork.user.username %> <span>
+          <%= link_to new_cowork_review_path(booking.cowork) do %>
+          <i class = 'fa fa-star'></i>
+          <% end %>
+          </span> </p>
+          <% else %>
           <p id = "cancel-styled">Cancel your booking  <span>
             <%= link_to booking_path(booking), method: :delete, class: "icone-designed" do %>
             <i class="fa fa-trash"></i>
             <% end %>
             </span>
           </p>
+        <% end %>
           </div>
-
       </div>
       <% end %>
 
@@ -37,3 +42,4 @@
       </div>
     </div>
 </div>
+
