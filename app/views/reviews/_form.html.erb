@@ -1,6 +1,6 @@
 
 <%= simple_form_for([@cowork, @review]) do |f| %>
   <%= f.input :rating, label: 'Your rating', placeholder: "1", collection: 1..5, required: true%>
-  <%= f.input :comment , as: :text, label: 'Your comment', required: true%>
+  <%= f.input :comment , as: :text, label: 'Your comment', required: true %>
   <%= f.button :submit, "Add review", class: "btn btn-primary form-control"%>
 <% end %>

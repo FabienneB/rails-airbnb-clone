@@ -68,7 +68,7 @@
           <h3 id="review_title"><%= pluralize @reviews.size, "review" %> </h3>
           <% if @reviews.size <= 3 %>
             <div id = "all_reviews" class = "few_reviews">
-              <% if @cowork.reviews.blank? %>
+              <% if @cowork.reviews.size == 0 %>
                 Be the first to leave a review for <%= @cowork.title %>
               <% else %>
                 <% @reviews.each do |review| %>
