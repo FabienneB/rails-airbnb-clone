@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :coworks, through: :bookings
+  has_many :reviews, through: :bookings
   # validates :username, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

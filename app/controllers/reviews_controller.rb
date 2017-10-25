@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     # @cowork = Cowork.find(params[:cowork_id])
     @review = Review.new(review_params)
     @review.cowork = @cowork
+    @review.user = current_user
     @review.rating = review_params["rating"].to_i
     if @review.save
       redirect_to bookings_path
