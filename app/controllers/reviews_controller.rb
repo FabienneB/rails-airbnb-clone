@@ -1,6 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_cowork
 
+  def index
+    @reviews = Review.where(cowork_id: @cowork.id)
+  end
+
   def new
     # @cowork = Cowork.find(params[:cowork_id])
     @review = Review.new
@@ -33,8 +37,6 @@ class ReviewsController < ApplicationController
     #   end
     # end
   end
-
-
 
   private
 

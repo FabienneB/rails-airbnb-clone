@@ -29,4 +29,10 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def cowork_review(cowork)
+    if Review.find_by(user_id: self, cowork_id: cowork)
+      return true
+    end
+  end
 end

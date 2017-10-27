@@ -19,7 +19,8 @@
         <p>Check in : <%= booking.checkin %> <i class="fa fa-arrow-right icone-designed"></i> Check out : <%=booking.checkout %> <i> <span class= "city">(<%= (booking.checkout - booking.checkin).to_i %> days)</span></i></p>
         <p>Total price : $ <span class = "city"> <%= (booking.checkout - booking.checkin).to_i * (booking.nbr_coworkers) * (booking.cowork.price)%> </span></p>
         <p> Status : <span class = "city"> <%= booking.status %> </span></p>
-          <% if booking.checkout < Date.today && booking.cowork.reviews.user != current_user %>
+          <% if booking.checkout < Date.today && current_user.cowork_review(booking.cowork).nil? %>
+
           <p> Leave a review to <%= booking.cowork.user.username %> <span>
           <%= link_to new_cowork_review_path(booking.cowork) do %>
           <i class = 'fa fa-star'></i>
