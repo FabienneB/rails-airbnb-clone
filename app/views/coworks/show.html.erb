@@ -64,10 +64,11 @@
         </div>
 
         <div class="reviews">
+
           <h3 id="review_title"><%= pluralize @reviews.size, "review" %> </h3>
           <% if @reviews.size <= 3 %>
             <div id = "all_reviews" class = "few_reviews">
-              <% if @cowork.reviews.blank? %>
+              <% if @cowork.reviews.size == 0 %>
                 Be the first to leave a review for <%= @cowork.title %>
               <% else %>
                 <% @reviews.each do |review| %>
@@ -85,12 +86,11 @@
           <% end %>
         </div>
 
-        <div class="add_review">
-          <a class="btn btn-primary" id= "btn_see_form_reviews"> Leave a review !</a>
-          <div id= "review_form">
-          <%= render 'reviews/form', cowork: @cowork, review: @review %>
-          </div>
-        </div>
+
+<!-- code d'elo qui fait foirer la validation du booking-->
+
+
+
 
       </div>
 
@@ -99,8 +99,8 @@
           <div class="price"><h2 class="text-center"> From  $<%= @cowork.price %> p/ night</h2></div>
           <div class="form-booking">
             <%= simple_form_for [@cowork, @booking] do |f| %>
-            <%= f.input :checkin, as: :string, input_html: { class: "datepicker form-box" }, label: 'Check-in', placeholder: "#{Date.today}", required: true %>
-            <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box" }, label: 'Check-out', placeholder: "#{Date.today+10}", required: true%>
+            <%= f.input :checkin, as: :string, input_html: { class: "datepicker form-box"}, label: 'Check-in', placeholder: "#{Date.today}", required: true %>
+            <%= f.input :checkout, as: :string, input_html: { class: "datepicker form-box"}, label: 'Check-out', placeholder: "#{Date.today+10}", required: true %>
             <%= f.input :nbr_coworkers, class: "form-box", label: 'Number of Kikoho Workers', placeholder: "0", required: true%>
             <%= f.button :submit, "Book", class: "btn btn-info form-control"%>
             <% end %>
@@ -114,9 +114,6 @@
 
     <h3 class = "neighborhood">The Neighborhood</h3>
     <div id="map" style="width: 100%; height: 600px;"></div>
-
-
-
 
 
 <% content_for(:after_js) do %>
@@ -137,16 +134,3 @@
   <% end %>
 <% end %>
 
-<script>
-document.getElementById('btn_see_form_reviews').addEventListener('click', function() {
-  document.getElementById('review_form').style.height= 'auto';
-  this.style.display= 'none';
-});
-
-document.getElementById('see_reviews').addEventListener('click', function() {
-  document.getElementById('all_reviews').style.height= 'auto';
-  document.getElementById('all_reviews').style.transition= 'all 500ms ease';
-  this.style.display= 'none';
-});
-
-</script>

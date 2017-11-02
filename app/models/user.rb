@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :coworks, through: :bookings
+  has_many :reviews, through: :bookings
   # validates :username, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -27,5 +28,11 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  def cowork_review(cowork)
+    if Review.find_by(user_id: self, cowork_id: cowork)
+      return true
+    end
   end
 end
