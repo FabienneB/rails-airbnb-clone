@@ -15,8 +15,10 @@ class Booking < ApplicationRecord
 
 
   def sum_coworkers
-    errors.add(:nbr_coworkers, "Sorry but the numbers of coworkers exceeded the capacity of this kikoho place") if nbr_coworkers > (self.cowork.capacity - self.cowork.bookings.where(:status == "accepted").sum { |nb| nb.nbr_coworkers })
+    errors.add(:nbr_coworkers, "Sorry but the numbers of coworkers exceeded the capacity of this kikoho place") if nbr_coworkers > self.cowork.capacity
+    #errors.add(:nbr_coworkers, "Sorry but the numbers of coworkers exceeded the capacity of this kikoho place") if nbr_coworkers > (self.cowork.capacity - self.cowork.bookings..where(:status == "accepted").where("(:checkin <= self.checkin AND :checkout >= self.checkin) OR (:checkin > self.checkin AND :checkout < self.checkout)").sum { |nb| nb.nbr_coworkers })
   end
+
 
 end
 
