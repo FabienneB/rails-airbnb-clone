@@ -28,11 +28,11 @@
         <div class="icone">
           <div class="icone_coworkers text-center">
             <i class="fa fa-users" aria-hidden="true"></i>
-            <p><%=@cowork.capacity + 3%> coworkers</p>
+            <p><%=@cowork.capacity %> coworkers</p>
           </div>
           <div class="icone_room text-center">
             <i class="fa fa-bed" aria-hidden="true"></i>
-            <p><%= @cowork.capacity %> rooms</p>
+            <p><%= @cowork.capacity %> rooms </p>
           </div>
         </div>
 
@@ -65,8 +65,8 @@
 
         <div class="reviews">
 
-          <h3 id="review_title"><%= pluralize @reviews.size, "review" %> </h3>
-          <% if @reviews.size <= 3 %>
+          <h3 id="review_title"><%= pluralize @cowork.reviews.size, "review" %> </h3>
+          <% if @cowork.reviews.size <= 3 %>
             <div id = "all_reviews" class = "few_reviews">
               <% if @cowork.reviews.size == 0 %>
                 Be the first to leave a review for <%= @cowork.title %>
@@ -88,8 +88,6 @@
 
 
 <!-- code d'elo qui fait foirer la validation du booking-->
-
-
 
 
       </div>
